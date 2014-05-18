@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">今日头条</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="left_drawer_no_login_tip">登录后，将推荐给你更多感兴趣的文章</string>
+    <string name="left_drawer_item_search">搜索</string>
+    <string name="left_drawer_item_favorite">收藏</string>
+    <string name="left_drawer_item_message">消息</string>
+    <string name="left_drawer_item_offline">离线</string>
+    <string name="left_drawer_item_offline_cancel">取消离线</string>
+    <string name="left_drawer_item_activity">活动</string>
+    <string name="left_drawer_item_setting">设置</string>
+    <string name="left_drawer_item_feedback">反馈</string>
+    <string name="left_drawer_item_appstore">精彩应用</string>
+    <string name="drawer_right_logout_hint_text">"登录后 可关注好友评论和收藏"</string>
+    <string name="drawer_right_tip_no_login">未登录</string>
+    <string name="ss_pattern_update">发现%1$d条更新</string>
+    <string name="ss_have_a_rest">暂无更新, 休息一会儿</string>
+    <string name="action_night_mode">夜间模式</string>
+    <string name="action_day_mode">日间模式</string>
+    <string name="setting_list_mode">列表显示摘要</string>
+    <string name="setting_font_size">字体大小</string>
+    <string name="setting_list_comment">列表页评论</string>
+    <string name="setting_refresh_list">列表页刷新</string>
+    <string name="setting_load_image">2G/3G网络流量</string>
+    <string name="setting_notify">推送通知</string>
+    <string name="setting_interactive">互动插件</string>
+    <string name="setting_share_when_favor">收藏时转发</string>
+    <string name="setting_share_when_diggbury">顶踩时转发</string>
+    <string name="setting_clear">清理缓存</string>
+    <string name="setting_feedback">意见反馈</string>
+    <string name="setting_recommend">精彩应用推荐</string>
+    <string name="setting_update">检查新版本</string>
+    <string name="setting_night_mode">夜间模式</string>
+    <string name="setting_use_swipe">左右翻页</string>
+    <string name="setting_switch_domain">启动网络调试</string>
+    <string name="setting_close_shake_hand">关闭摇一摇切换夜间模式</string>
+    <string name="setting_use_help">使用帮助</string>
+    <string name="app_copyright">© 头条网 toutiao.com</string>
+    <string name="favorite_btn_delete">删除</string>
+    <string name="favorite_btn_edit">编辑</string>
+    <string name="favorite_btn_cancel">取消</string>
+    <string name="dislike_dlg_lable_speech">读文章</string>
+    <string name="drawer_btn_rss">频道管理</string>
+    <string name="subscribe_my_category">我的频道</string>
+    <string name="subscribe_more_category">更多频道</string>
+    <string name="subscribe_manager_category_info">单击增删频道</string>
+    <string name="subscribe_manager_category_info_2">单击增删频道，长按拖拽排序</string>
+    <string name="label_cancel_dislike">撤消</string>
+    <string name="day_today">今天</string>
+    <string name="day_yesterday">昨天</string>
+    <string name="day_before">前天</string>
+    <string name="search_count_fmt">发现%1$s篇文章</string>
+    <string name="ss_pattern_update">发现%1$d条更新</string>
+    <string name="pattern_update">发现%1$d条更新</string>
+    <string name="city_category_list_header">点击选择其他城市</string>
+    <string name="city_category_list_hint">选择城市，立即查看本地新闻</string>
+    <string name="city_category_list_notify_no_city">请先选择您关注的城市</string>
+    <string name="retry_large_image"><u>加载失败，点击重试</u></string>
+
+</resources>
