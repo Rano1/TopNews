@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<selector
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:state_selected="true" android:color="@color/subscribe_item_selected_stroke" />
-    <item android:state_pressed="true" android:color="@color/subscribe_item_text_color_pressed" />
-    <item android:color="@color/subscribe_item_text_color_normal" />
-</selector>

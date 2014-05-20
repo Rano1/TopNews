@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<clip android:gravity="left" android:drawable="@drawable/detail_title_bar_progress" android:clipOrientation="horizontal"
-  xmlns:android="http://schemas.android.com/apk/res/android" />
