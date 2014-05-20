@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/dislike_bg_normal"
+    android:gravity="center_vertical"
+    android:minHeight="36.0dip"
+    android:orientation="horizontal" >
+
+    <LinearLayout
+        android:id="@+id/ll_pop_speech"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/dislike_bg"
+        android:clickable="true"
+        android:gravity="center"
+        android:minHeight="36.0dip"
+        android:minWidth="90.0dip"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/tv_pop_speech"
+            style="@style/dislike_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/listpage_more_speech"
+            android:drawablePadding="4.0dip"
+            android:duplicateParentState="true"
+            android:text="@string/dislike_dlg_lable_speech" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/pop_dislike_line"
+        android:layout_width="0.5dip"
+        android:layout_height="22.0dip"
+        android:background="@drawable/dislike_line" />
+
+    <LinearLayout
+        android:id="@+id/ll_pop_favor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/dislike_bg"
+        android:clickable="true"
+        android:gravity="center"
+        android:minHeight="36.0dip"
+        android:minWidth="90.0dip"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/tv_pop_favor"
+            style="@style/dislike_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/listpage_more_like"
+            android:drawablePadding="4.0dip"
+            android:duplicateParentState="true"
+            android:text="收藏" />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="0.5dip"
+        android:layout_height="22.0dip"
+        android:background="@drawable/dislike_line" />
+
+    <LinearLayout
+        android:id="@+id/ll_pop_dislike"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/dislike_bg"
+        android:clickable="true"
+        android:gravity="center"
+        android:minHeight="36.0dip"
+        android:minWidth="90.0dip"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/tv_pop_dislike"
+            style="@style/dislike_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/listpage_more_dislike"
+            android:drawablePadding="4.0dip"
+            android:duplicateParentState="true"
+            android:text="不感兴趣" />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="0.5dip"
+        android:layout_height="22.0dip"
+        android:background="@drawable/dislike_line" />
+
+    <ImageView
+        android:id="@+id/btn_pop_close"
+        android:layout_width="36.0dip"
+        android:layout_height="36.0dip"
+        android:background="@drawable/dislike_bg"
+        android:scaleType="center"
+        android:src="@drawable/listpage_more_close" />
+
+</LinearLayout>

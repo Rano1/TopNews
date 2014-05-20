@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_selected="true" android:state_pressed="true" android:drawable="@drawable/ic_action_favor_on_pressed" />
+    <item android:state_selected="true" android:drawable="@drawable/ic_action_favor_on_normal" />
+    <item android:state_selected="false" android:state_pressed="true" android:drawable="@drawable/ic_action_favor_pressed" />
+    <item android:drawable="@drawable/ic_action_favor_normal" />
+</selector>

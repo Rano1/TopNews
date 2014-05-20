@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root_view"
+    style="@style/detail_activity"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <include
+        android:id="@+id/title_bar"
+        layout="@layout/detail_title_bar" />
+
+    <View
+        android:id="@+id/title_bar_divider"
+        android:layout_width="fill_parent"
+        android:layout_height="0.5dip"
+        android:layout_below="@id/title_bar"
+        android:background="@color/detail_divider_day" />
+
+    <FrameLayout
+        android:id="@+id/tool_bar_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" >
+
+        <include
+            android:id="@+id/tool_bar"
+            layout="@layout/tool_bar" />
+    </FrameLayout>
+
+    <!-- <com.ss.android.common.ui.view.SwipeOverlayFrameLayout -->
+    <!-- android:id="@+id/swipe_overlay" -->
+    <!-- android:layout_width="fill_parent" -->
+    <!-- android:layout_height="wrap_content" -->
+    <!-- android:layout_above="@id/tool_bar_layout" -->
+    <!-- android:layout_below="@id/title_bar_divider" > -->
+
+
+    <!-- <com.ss.android.common.ui.view.MyViewPager -->
+    <!-- android:id="@+id/pager" -->
+    <!-- android:layout_width="fill_parent" -->
+    <!-- android:layout_height="fill_parent" /> -->
+    <!-- </com.ss.android.common.ui.view.SwipeOverlayFrameLayout> -->
+
+    <WebView
+        android:id="@+id/wb_details"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/tool_bar_layout"
+        android:layout_below="@id/title_bar_divider" 
+        android:visibility="gone"/>
+
+    <ProgressBar
+        android:id="@+id/ss_htmlprogessbar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="8.0dip"
+        android:layout_above="@id/tool_bar_layout"
+        android:layout_marginBottom="2.0dip"
+        android:layout_marginLeft="10.0dip"
+        android:layout_marginRight="10.0dip"
+        android:max="100"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:id="@+id/notify_view"
+        android:layout_width="fill_parent"
+        android:layout_height="25.0dip"
+        android:layout_below="@id/title_bar"
+        android:layout_marginLeft="6.0dip"
+        android:layout_marginRight="6.0dip"
+        android:layout_marginTop="6.0dip"
+        android:background="@drawable/bg_notify"
+        android:visibility="gone" >
+
+        <TextView
+            android:id="@+id/notify_view_text"
+            style="@style/list_notify_view"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="@null" />
+
+        <LinearLayout
+            android:id="@+id/notify_view_cancel_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_alignParentRight="true"
+            android:orientation="horizontal" >
+
+            <View
+                android:id="@+id/notify_view_divider"
+                style="@style/notify_view_divider"
+                android:layout_width="0.5dip"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_marginBottom="5.0dip"
+                android:layout_marginTop="5.0dip" />
+
+            <TextView
+                android:id="@+id/notify_view_cancel"
+                style="@style/list_notify_cancel_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/drawer_shadow"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/title_bar_height"
+        android:background="#80000000"
+        android:visibility="invisible" />
+
+    <FrameLayout
+        android:id="@+id/customview_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/title_bar"
+        android:background="#ff000000"
+        android:clickable="true"
+        android:visibility="gone" />
+
+</RelativeLayout>

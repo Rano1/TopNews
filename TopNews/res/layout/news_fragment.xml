@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/item_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text=""
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/detail_loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:src="@drawable/detail_loading" />
+
+    <com.topnews.view.HeadListView
+        android:id="@+id/mListView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="0dp"
+        android:fadingEdge="none"
+        android:scrollbars="none" />
+
+    <RelativeLayout
+        android:id="@+id/notify_view"
+        android:layout_width="fill_parent"
+        android:layout_height="25.0dip"
+        android:layout_marginLeft="6.0dip"
+        android:layout_marginRight="6.0dip"
+        android:layout_marginTop="6.0dip"
+        android:background="@drawable/bg_notify"
+        android:visibility="gone" >
+
+        <TextView
+            android:id="@+id/notify_view_text"
+            style="@style/list_notify_view"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="@null" />
+
+        <LinearLayout
+            android:id="@+id/notify_view_cancel_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_alignParentRight="true"
+            android:orientation="horizontal"
+            android:visibility="gone" >
+
+            <View
+                android:id="@+id/notify_view_divider"
+                style="@style/notify_view_divider"
+                android:layout_width="0.5dip"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_marginBottom="5.0dip"
+                android:layout_marginTop="5.0dip" />
+
+            <TextView
+                android:id="@+id/notify_view_cancel"
+                style="@style/list_notify_cancel_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/empty_notify_view"
+        style="@style/list_notify_view"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+
+    <!-- android:divider="#ffdddddd" -->
+    <!-- android:dividerHeight="0.5dp" -->
+
+</RelativeLayout>

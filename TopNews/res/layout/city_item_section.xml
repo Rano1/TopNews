@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_city_section"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/subscribe_bg"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    android:paddingBottom="4.0dip"
+    android:paddingLeft="29.0dip"
+    android:paddingTop="4.0dip" >
+
+    <TextView
+        android:id="@+id/city_item_section_text"
+        style="@style/item_section_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+    </TextView>
+</LinearLayout>

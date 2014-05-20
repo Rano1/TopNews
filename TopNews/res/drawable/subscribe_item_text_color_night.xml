@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:state_selected="true" android:color="@color/subscribe_item_selected_stroke_night"/>
+    <item android:state_pressed="true" android:color="@color/subscribe_item_text_color_pressed_night"/>
+    <item android:color="@color/subscribe_item_text_color_normal_night"/>
+
+</selector>
