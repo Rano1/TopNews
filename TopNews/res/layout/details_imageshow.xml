@@ -5,7 +5,7 @@
     android:layout_height="fill_parent"
     android:background="@drawable/bg_full_image" >
 
-    <com.topnews.view.ImageViewTouchViewPager
+    <com.topnews.view.imageshow.ImageShowViewPager
         android:id="@+id/image_pager"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent" />

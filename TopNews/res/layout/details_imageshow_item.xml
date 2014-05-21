@@ -4,7 +4,7 @@
     android:layout_height="fill_parent"
     android:background="@drawable/bg_full_image" >
 
-    <com.topnews.view.imagezoom.ImageViewTouch
+    <com.topnews.view.imageshow.TouchImageView
         android:id="@+id/full_image"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
