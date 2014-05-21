@@ -48,6 +48,7 @@ public class DetailsActivity extends BaseActivity {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.details);
+		setNeedBackGesture(true);//设置需要手势监听
 		getData();
 		initView();
 		initWebView();
