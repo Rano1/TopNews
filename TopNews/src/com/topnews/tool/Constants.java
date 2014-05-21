@@ -34,6 +34,7 @@ public class Constants {
 				news.setPicOne(url1);
 				news.setPicTwo(url2);
 				news.setPicThr(url3);
+				news.setSource_url("http://tech.sina.com.cn/zl/post/detail/i/2013-11-06/pid_8436571.htm?from=groupmessage&isappinstalled=0");
 				url_list.add(url1);
 				url_list.add(url2);
 				url_list.add(url3);
@@ -54,6 +55,7 @@ public class Constants {
 				news.setLocal("อฦนใ");
 				news.setIsLarge(true);
 				String url = "http://imgt2.bdstatic.com/it/u=3269155243,2604389213&fm=21&gp=0.jpg";
+				news.setSource_url("http://games.sina.com.cn/zl/duanpian/2014-05-21/141297.shtml");
 				news.setPicOne(url);
 				url_list.clear();
 				url_list.add(url);
