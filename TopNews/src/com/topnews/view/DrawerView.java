@@ -11,6 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
+import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu.OnClosedListener;
 import com.topnews.R;
 import com.topnews.SettingsActivity;
 /** 
@@ -30,7 +31,7 @@ public class DrawerView implements OnClickListener{
 		localSlidingMenu = new SlidingMenu(activity);
 		localSlidingMenu.setMode(SlidingMenu.LEFT_RIGHT);//设置左右滑菜单
 		localSlidingMenu.setTouchModeAbove(SlidingMenu.SLIDING_WINDOW);//设置要使菜单滑动，触碰屏幕的范围
-//		localSlidingMenu.setTouchModeBehind(SlidingMenu.RIGHT);
+//		localSlidingMenu.setTouchModeBehind(SlidingMenu.SLIDING_CONTENT);//设置了这个会获取不到菜单里面的焦点，所以先注释掉
 		localSlidingMenu.setShadowWidthRes(R.dimen.shadow_width);//设置阴影图片的宽度
 		localSlidingMenu.setShadowDrawable(R.drawable.shadow);//设置阴影图片
 		localSlidingMenu.setBehindOffsetRes(R.dimen.slidingmenu_offset);//SlidingMenu划出时主页面显示的剩余宽度
@@ -46,7 +47,14 @@ public class DrawerView implements OnClickListener{
 						
 					}
 				});
-		
+		localSlidingMenu.setOnClosedListener(new OnClosedListener() {
+			
+			@Override
+			public void onClosed() {
+				// TODO Auto-generated method stub
+				
+			}
+		});
 		initView();
 		return localSlidingMenu;
 	}
