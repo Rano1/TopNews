@@ -3,7 +3,7 @@ package com.topnews.bean;
 import java.io.Serializable;
 
 /** 
- * ITEMµÄ¶ÔÓ¦¿ÉĞò»¯¶ÓÁĞÊôĞÔ
+ * ITEMçš„å¯¹åº”å¯åºåŒ–é˜Ÿåˆ—å±æ€§
  *  */
 public class ChannelItem implements Serializable {
 	/**
@@ -11,19 +11,19 @@ public class ChannelItem implements Serializable {
 	 */
 	private static final long serialVersionUID = -6465237897027410019L;
 	/** 
-	 * À¸Ä¿¶ÔÓ¦ID
+	 * æ ç›®å¯¹åº”ID
 	 *  */
 	public Integer id;
 	/** 
-	 * À¸Ä¿¶ÔÓ¦NAME
+	 * æ ç›®å¯¹åº”NAME
 	 *  */
 	public String name;
 	/** 
-	 * À¸Ä¿ÔÚÕûÌåÖĞµÄÅÅĞòË³Ğò  rank
+	 * æ ç›®åœ¨æ•´ä½“ä¸­çš„æ’åºé¡ºåº  rank
 	 *  */
 	public Integer orderId;
 	/** 
-	 * À¸Ä¿ÊÇ·ñÑ¡ÖĞ
+	 * æ ç›®æ˜¯å¦é€‰ä¸­
 	 *  */
 	public Integer selected;
 

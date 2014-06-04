@@ -8,19 +8,19 @@ import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 
 public class ColumnHorizontalScrollView extends HorizontalScrollView {
-	/** ´«ÈëÕûÌå²¼¾Ö  */
+	/** ä¼ å…¥æ•´ä½“å¸ƒå±€  */
 	private View ll_content;
-	/** ´«Èë¸ü¶àÀ¸Ä¿Ñ¡Ôñ²¼¾Ö */
+	/** ä¼ å…¥æ›´å¤šæ ç›®é€‰æ‹©å¸ƒå±€ */
 	private View ll_more;
-	/** ´«ÈëÍÏ¶¯À¸²¼¾Ö */
+	/** ä¼ å…¥æ‹–åŠ¨æ å¸ƒå±€ */
 	private View rl_column;
-	/** ×óÒõÓ°Í¼Æ¬ */
+	/** å·¦é˜´å½±å›¾ç‰‡ */
 	private ImageView leftImage;
-	/** ÓÒÒõÓ°Í¼Æ¬ */
+	/** å³é˜´å½±å›¾ç‰‡ */
 	private ImageView rightImage;
-	/** ÆÁÄ»¿í¶È */
+	/** å±å¹•å®½åº¦ */
 	private int mScreenWitdh = 0;
-	/** ¸¸ÀàµÄ»î¶¯activity */
+	/** çˆ¶ç±»çš„æ´»åŠ¨activity */
 	private Activity activity;
 	
 	public ColumnHorizontalScrollView(Context context) {
@@ -36,7 +36,7 @@ public class ColumnHorizontalScrollView extends HorizontalScrollView {
 		super(context, attrs, defStyle);
 	}
 	/** 
-	 * ÔÚÍÏ¶¯µÄÊ±ºòÖ´ĞĞ
+	 * åœ¨æ‹–åŠ¨çš„æ—¶å€™æ‰§è¡Œ
 	 * */
 	@Override
 	protected void onScrollChanged(int paramInt1, int paramInt2, int paramInt3, int paramInt4) {
@@ -65,7 +65,7 @@ public class ColumnHorizontalScrollView extends HorizontalScrollView {
 	   rightImage.setVisibility(View.VISIBLE);
 	}
 	/** 
-	 * ´«Èë¸¸Àà²¼¾ÖÖĞµÄ×ÊÔ´ÎÄ¼ş
+	 * ä¼ å…¥çˆ¶ç±»å¸ƒå±€ä¸­çš„èµ„æºæ–‡ä»¶
 	 * */
 	public void setParam(Activity activity, int mScreenWitdh,View paramView1,ImageView paramView2, ImageView paramView3 ,View paramView4,View paramView5){
 		this.activity = activity;
@@ -77,12 +77,12 @@ public class ColumnHorizontalScrollView extends HorizontalScrollView {
 		rl_column = paramView5;
 	}
 	/** 
-	 * ÅĞ¶Ï×óÓÒÒõÓ°µÄÏÔÊ¾Òş²ØĞ§¹û
+	 * åˆ¤æ–­å·¦å³é˜´å½±çš„æ˜¾ç¤ºéšè—æ•ˆæœ
 	 * */
 	public void shade_ShowOrHide() {
 		if (!activity.isFinishing() && ll_content != null) {
 			measure(0, 0);
-			//Èç¹ûÕûÌå¿í¶ÈĞ¡ÓÚÆÁÄ»¿í¶ÈµÄ»°£¬ÄÇ×óÓÒÒõÓ°¶¼Òş²Ø
+			//å¦‚æœæ•´ä½“å®½åº¦å°äºå±å¹•å®½åº¦çš„è¯ï¼Œé‚£å·¦å³é˜´å½±éƒ½éšè—
 			if (mScreenWitdh >= getMeasuredWidth()) {
 				leftImage.setVisibility(View.GONE);
 				rightImage.setVisibility(View.GONE);
@@ -90,19 +90,19 @@ public class ColumnHorizontalScrollView extends HorizontalScrollView {
 		} else {
 			return;
 		}
-		//Èç¹û»¬¶¯ÔÚ×î×ó±ßÊ±ºò£¬×ó±ßÒõÓ°Òş²Ø£¬ÓÒ±ßÏÔÊ¾
+		//å¦‚æœæ»‘åŠ¨åœ¨æœ€å·¦è¾¹æ—¶å€™ï¼Œå·¦è¾¹é˜´å½±éšè—ï¼Œå³è¾¹æ˜¾ç¤º
 		if (getLeft() == 0) {
 			leftImage.setVisibility(View.GONE);
 			rightImage.setVisibility(View.VISIBLE);
 			return;
 		}
-		//Èç¹û»¬¶¯ÔÚ×îÓÒ±ßÊ±ºò£¬×ó±ßÒõÓ°ÏÔÊ¾£¬ÓÒ±ßÒş²Ø
+		//å¦‚æœæ»‘åŠ¨åœ¨æœ€å³è¾¹æ—¶å€™ï¼Œå·¦è¾¹é˜´å½±æ˜¾ç¤ºï¼Œå³è¾¹éšè—
 		if (getRight() == getMeasuredWidth() - mScreenWitdh) {
 			leftImage.setVisibility(View.VISIBLE);
 			rightImage.setVisibility(View.GONE);
 			return;
 		}
-		//·ñÔò£¬ËµÃ÷ÔÚÖĞ¼äÎ»ÖÃ£¬×ó¡¢ÓÒÒõÓ°¶¼ÏÔÊ¾
+		//å¦åˆ™ï¼Œè¯´æ˜åœ¨ä¸­é—´ä½ç½®ï¼Œå·¦ã€å³é˜´å½±éƒ½æ˜¾ç¤º
 		leftImage.setVisibility(View.VISIBLE);
 		rightImage.setVisibility(View.VISIBLE);
 	}

@@ -15,7 +15,7 @@ import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu.OnClosedListener;
 import com.topnews.R;
 import com.topnews.SettingsActivity;
 /** 
- * ×Ô¶¨ÒåSlidingMenu ²âÀ­²Ëµ¥Àà
+ * è‡ªå®šä¹‰SlidingMenu æµ‹æ‹‰èœå•ç±»
  * */
 public class DrawerView implements OnClickListener{
 	private final Activity activity;
@@ -29,17 +29,17 @@ public class DrawerView implements OnClickListener{
 
 	public SlidingMenu initSlidingMenu() {
 		localSlidingMenu = new SlidingMenu(activity);
-		localSlidingMenu.setMode(SlidingMenu.LEFT_RIGHT);//ÉèÖÃ×óÓÒ»¬²Ëµ¥
-		localSlidingMenu.setTouchModeAbove(SlidingMenu.SLIDING_WINDOW);//ÉèÖÃÒªÊ¹²Ëµ¥»¬¶¯£¬´¥ÅöÆÁÄ»µÄ·¶Î§
-//		localSlidingMenu.setTouchModeBehind(SlidingMenu.SLIDING_CONTENT);//ÉèÖÃÁËÕâ¸ö»á»ñÈ¡²»µ½²Ëµ¥ÀïÃæµÄ½¹µã£¬ËùÒÔÏÈ×¢ÊÍµô
-		localSlidingMenu.setShadowWidthRes(R.dimen.shadow_width);//ÉèÖÃÒõÓ°Í¼Æ¬µÄ¿í¶È
-		localSlidingMenu.setShadowDrawable(R.drawable.shadow);//ÉèÖÃÒõÓ°Í¼Æ¬
-		localSlidingMenu.setBehindOffsetRes(R.dimen.slidingmenu_offset);//SlidingMenu»®³öÊ±Ö÷Ò³ÃæÏÔÊ¾µÄÊ£Óà¿í¶È
-		localSlidingMenu.setFadeDegree(0.35F);//SlidingMenu»¬¶¯Ê±µÄ½¥±ä³Ì¶È
-		localSlidingMenu.attachToActivity(activity, SlidingMenu.RIGHT);//Ê¹SlidingMenu¸½¼ÓÔÚActivityÓÒ±ß
-//		localSlidingMenu.setBehindWidthRes(R.dimen.left_drawer_avatar_size);//ÉèÖÃSlidingMenu²Ëµ¥µÄ¿í¶È
-		localSlidingMenu.setMenu(R.layout.left_drawer_fragment);//ÉèÖÃmenuµÄ²¼¾ÖÎÄ¼ş
-//		localSlidingMenu.toggle();//¶¯Ì¬ÅĞ¶Ï×Ô¶¯¹Ø±Õ»ò¿ªÆôSlidingMenu
+		localSlidingMenu.setMode(SlidingMenu.LEFT_RIGHT);//è®¾ç½®å·¦å³æ»‘èœå•
+		localSlidingMenu.setTouchModeAbove(SlidingMenu.SLIDING_WINDOW);//è®¾ç½®è¦ä½¿èœå•æ»‘åŠ¨ï¼Œè§¦ç¢°å±å¹•çš„èŒƒå›´
+//		localSlidingMenu.setTouchModeBehind(SlidingMenu.SLIDING_CONTENT);//è®¾ç½®äº†è¿™ä¸ªä¼šè·å–ä¸åˆ°èœå•é‡Œé¢çš„ç„¦ç‚¹ï¼Œæ‰€ä»¥å…ˆæ³¨é‡Šæ‰
+		localSlidingMenu.setShadowWidthRes(R.dimen.shadow_width);//è®¾ç½®é˜´å½±å›¾ç‰‡çš„å®½åº¦
+		localSlidingMenu.setShadowDrawable(R.drawable.shadow);//è®¾ç½®é˜´å½±å›¾ç‰‡
+		localSlidingMenu.setBehindOffsetRes(R.dimen.slidingmenu_offset);//SlidingMenuåˆ’å‡ºæ—¶ä¸»é¡µé¢æ˜¾ç¤ºçš„å‰©ä½™å®½åº¦
+		localSlidingMenu.setFadeDegree(0.35F);//SlidingMenuæ»‘åŠ¨æ—¶çš„æ¸å˜ç¨‹åº¦
+		localSlidingMenu.attachToActivity(activity, SlidingMenu.RIGHT);//ä½¿SlidingMenué™„åŠ åœ¨Activityå³è¾¹
+//		localSlidingMenu.setBehindWidthRes(R.dimen.left_drawer_avatar_size);//è®¾ç½®SlidingMenuèœå•çš„å®½åº¦
+		localSlidingMenu.setMenu(R.layout.left_drawer_fragment);//è®¾ç½®menuçš„å¸ƒå±€æ–‡ä»¶
+//		localSlidingMenu.toggle();//åŠ¨æ€åˆ¤æ–­è‡ªåŠ¨å…³é—­æˆ–å¼€å¯SlidingMenu
 		localSlidingMenu.setSecondaryMenu(R.layout.profile_drawer_right);
 		localSlidingMenu.setSecondaryShadowDrawable(R.drawable.shadowright);
 		localSlidingMenu.setOnOpenedListener(new SlidingMenu.OnOpenedListener() {

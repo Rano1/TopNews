@@ -21,7 +21,7 @@ import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 /**
- * Í¼Æ¬ä¯ÀÀµÄPagerAdapter
+ * å›¾ç‰‡æµè§ˆçš„PagerAdapter
  */
 public class ImagePagerAdapter extends PagerAdapter {
 	Context context;
@@ -29,7 +29,7 @@ public class ImagePagerAdapter extends PagerAdapter {
 	LayoutInflater inflater = null;
 	protected ImageLoader imageLoader = ImageLoader.getInstance();
 	DisplayImageOptions options;
-	//viewÄÚ¿Ø¼ş
+	//viewå†…æ§ä»¶
 	TouchImageView full_image;
 	TextView progress_text;
 	ProgressBar progress;
@@ -42,7 +42,7 @@ public class ImagePagerAdapter extends PagerAdapter {
 		options = Options.getListOptions();
 	}
 	
-	/** ¶¯Ì¬¼ÓÔØÊı¾İ */
+	/** åŠ¨æ€åŠ è½½æ•°æ® */
 	@Override
 	public void setPrimaryItem(ViewGroup container, int position, Object object) {
 		super.setPrimaryItem(container, position, object);
@@ -71,7 +71,7 @@ public class ImagePagerAdapter extends PagerAdapter {
 		full_image = (TouchImageView)view.findViewById(R.id.full_image);
 		progress_text= (TextView)view.findViewById(R.id.progress_text);
 		progress= (ProgressBar)view.findViewById(R.id.progress);
-		retry= (TextView)view.findViewById(R.id.retry);//¼ÓÔØÊ§°Ü
+		retry= (TextView)view.findViewById(R.id.retry);//åŠ è½½å¤±è´¥
 		progress_text.setText(String.valueOf(position));
 		imageLoader.displayImage(imgsUrl.get(position), full_image, options,new ImageLoadingListener() {
 			

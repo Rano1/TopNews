@@ -6,10 +6,10 @@ import android.database.sqlite.SQLiteDatabase.CursorFactory;
 import android.database.sqlite.SQLiteOpenHelper;
 
 public class SQLHelper extends SQLiteOpenHelper {
-	public static final String DB_NAME = "database.db";// Êı¾İ¿âÃû³Æ
+	public static final String DB_NAME = "database.db";// æ•°æ®åº“åç§°
 	public static final int VERSION = 1;
 	
-	public static final String TABLE_CHANNEL = "channel";//Êı¾İ±í 
+	public static final String TABLE_CHANNEL = "channel";//æ•°æ®è¡¨ 
 
 	public static final String ID = "id";//
 	public static final String NAME = "name";
@@ -27,7 +27,7 @@ public class SQLHelper extends SQLiteOpenHelper {
 	
 	@Override
 	public void onCreate(SQLiteDatabase db) {
-		// TODO ´´½¨Êı¾İ¿âºó£¬¶ÔÊı¾İ¿âµÄ²Ù×÷
+		// TODO åˆ›å»ºæ•°æ®åº“åï¼Œå¯¹æ•°æ®åº“çš„æ“ä½œ
 		String sql = "create table if not exists "+TABLE_CHANNEL +
 				"(_id INTEGER PRIMARY KEY AUTOINCREMENT, " +
 				ID + " INTEGER , " +
@@ -39,7 +39,7 @@ public class SQLHelper extends SQLiteOpenHelper {
 
 	@Override
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-		// TODO ¸ü¸ÄÊı¾İ¿â°æ±¾µÄ²Ù×÷
+		// TODO æ›´æ”¹æ•°æ®åº“ç‰ˆæœ¬çš„æ“ä½œ
 		onCreate(db);
 	}
 

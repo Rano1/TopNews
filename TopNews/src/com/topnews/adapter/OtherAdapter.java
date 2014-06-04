@@ -17,9 +17,9 @@ public class OtherAdapter extends BaseAdapter {
 	private Context context;
 	public List<ChannelItem> channelList;
 	private TextView item_text;
-	/** 是否可见 */
+	/** 鏄惁鍙 */
 	boolean isVisible = true;
-	/** 要删除的position */
+	/** 瑕佸垹闄ょ殑position */
 	public int remove_position = -1;
 
 	public OtherAdapter(Context context, List<ChannelItem> channelList) {
@@ -60,41 +60,41 @@ public class OtherAdapter extends BaseAdapter {
 		return view;
 	}
 	
-	/** 获取频道列表 */
+	/** 鑾峰彇棰戦亾鍒楄〃 */
 	public List<ChannelItem> getChannnelLst() {
 		return channelList;
 	}
 	
-	/** 添加频道列表 */
+	/** 娣诲姞棰戦亾鍒楄〃 */
 	public void addItem(ChannelItem channel) {
 		channelList.add(channel);
 		notifyDataSetChanged();
 	}
 
-	/** 设置删除的position */
+	/** 璁剧疆鍒犻櫎鐨刾osition */
 	public void setRemove(int position) {
 		remove_position = position;
 		notifyDataSetChanged();
 		// notifyDataSetChanged();
 	}
 
-	/** 删除频道列表 */
+	/** 鍒犻櫎棰戦亾鍒楄〃 */
 	public void remove() {
 		channelList.remove(remove_position);
 		remove_position = -1;
 		notifyDataSetChanged();
 	}
-	/** 设置频道列表 */
+	/** 璁剧疆棰戦亾鍒楄〃 */
 	public void setListDate(List<ChannelItem> list) {
 		channelList = list;
 	}
 
-	/** 获取是否可见 */
+	/** 鑾峰彇鏄惁鍙 */
 	public boolean isVisible() {
 		return isVisible;
 	}
 	
-	/** 设置是否可见 */
+	/** 璁剧疆鏄惁鍙 */
 	public void setVisible(boolean visible) {
 		isVisible = visible;
 	}

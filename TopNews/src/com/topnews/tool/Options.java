@@ -8,33 +8,33 @@ import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
 import com.topnews.R;
 
 public class Options {
-	/** ĞÂÎÅÁĞ±íÖĞÓÃµ½µÄÍ¼Æ¬¼ÓÔØÅäÖÃ */
+	/** æ–°é—»åˆ—è¡¨ä¸­ç”¨åˆ°çš„å›¾ç‰‡åŠ è½½é…ç½® */
 	public static DisplayImageOptions getListOptions() {
 		DisplayImageOptions options = new DisplayImageOptions.Builder()
-//				// ÉèÖÃÍ¼Æ¬ÔÚÏÂÔØÆÚ¼äÏÔÊ¾µÄÍ¼Æ¬
+//				// è®¾ç½®å›¾ç‰‡åœ¨ä¸‹è½½æœŸé—´æ˜¾ç¤ºçš„å›¾ç‰‡
 //				.showImageOnLoading(R.drawable.small_image_holder_listpage)
-//				// ÉèÖÃÍ¼Æ¬UriÎª¿Õ»òÊÇ´íÎóµÄÊ±ºòÏÔÊ¾µÄÍ¼Æ¬
+//				// è®¾ç½®å›¾ç‰‡Uriä¸ºç©ºæˆ–æ˜¯é”™è¯¯çš„æ—¶å€™æ˜¾ç¤ºçš„å›¾ç‰‡
 //				.showImageForEmptyUri(R.drawable.small_image_holder_listpage)
-//				// ÉèÖÃÍ¼Æ¬¼ÓÔØ/½âÂë¹ı³ÌÖĞ´íÎóÊ±ºòÏÔÊ¾µÄÍ¼Æ¬
+//				// è®¾ç½®å›¾ç‰‡åŠ è½½/è§£ç è¿‡ç¨‹ä¸­é”™è¯¯æ—¶å€™æ˜¾ç¤ºçš„å›¾ç‰‡
 //				.showImageOnFail(R.drawable.small_image_holder_listpage)
 				.cacheInMemory(true)
-				// ÉèÖÃÏÂÔØµÄÍ¼Æ¬ÊÇ·ñ»º´æÔÚÄÚ´æÖĞ
+				// è®¾ç½®ä¸‹è½½çš„å›¾ç‰‡æ˜¯å¦ç¼“å­˜åœ¨å†…å­˜ä¸­
 				.cacheOnDisc(true)
-				// ÉèÖÃÏÂÔØµÄÍ¼Æ¬ÊÇ·ñ»º´æÔÚSD¿¨ÖĞ
+				// è®¾ç½®ä¸‹è½½çš„å›¾ç‰‡æ˜¯å¦ç¼“å­˜åœ¨SDå¡ä¸­
 				.considerExifParams(true)
-				.imageScaleType(ImageScaleType.EXACTLY_STRETCHED)// ÉèÖÃÍ¼Æ¬ÒÔÈçºÎµÄ±àÂë·½Ê½ÏÔÊ¾
-				.bitmapConfig(Bitmap.Config.RGB_565)// ÉèÖÃÍ¼Æ¬µÄ½âÂëÀàĞÍ
+				.imageScaleType(ImageScaleType.EXACTLY_STRETCHED)// è®¾ç½®å›¾ç‰‡ä»¥å¦‚ä½•çš„ç¼–ç æ–¹å¼æ˜¾ç¤º
+				.bitmapConfig(Bitmap.Config.RGB_565)// è®¾ç½®å›¾ç‰‡çš„è§£ç ç±»å‹
 				// .decodingOptions(android.graphics.BitmapFactory.Options
-				// decodingOptions)//ÉèÖÃÍ¼Æ¬µÄ½âÂëÅäÖÃ
+				// decodingOptions)//è®¾ç½®å›¾ç‰‡çš„è§£ç é…ç½®
 				.considerExifParams(true)
-				// ÉèÖÃÍ¼Æ¬ÏÂÔØÇ°µÄÑÓ³Ù
+				// è®¾ç½®å›¾ç‰‡ä¸‹è½½å‰çš„å»¶è¿Ÿ
 				// .delayBeforeLoading(int delayInMillis)//int
-				// delayInMillisÎªÄãÉèÖÃµÄÑÓ³ÙÊ±¼ä
-				// ÉèÖÃÍ¼Æ¬¼ÓÈë»º´æÇ°£¬¶Ôbitmap½øĞĞÉèÖÃ
-				// ¡£preProcessor(BitmapProcessor preProcessor)
-				.resetViewBeforeLoading(true)// ÉèÖÃÍ¼Æ¬ÔÚÏÂÔØÇ°ÊÇ·ñÖØÖÃ£¬¸´Î»
-				// .displayer(new RoundedBitmapDisplayer(20))//ÊÇ·ñÉèÖÃÎªÔ²½Ç£¬»¡¶ÈÎª¶àÉÙ
-				.displayer(new FadeInBitmapDisplayer(100))// µ­Èë
+				// delayInMillisä¸ºä½ è®¾ç½®çš„å»¶è¿Ÿæ—¶é—´
+				// è®¾ç½®å›¾ç‰‡åŠ å…¥ç¼“å­˜å‰ï¼Œå¯¹bitmapè¿›è¡Œè®¾ç½®
+				// ã€‚preProcessor(BitmapProcessor preProcessor)
+				.resetViewBeforeLoading(true)// è®¾ç½®å›¾ç‰‡åœ¨ä¸‹è½½å‰æ˜¯å¦é‡ç½®ï¼Œå¤ä½
+				// .displayer(new RoundedBitmapDisplayer(20))//æ˜¯å¦è®¾ç½®ä¸ºåœ†è§’ï¼Œå¼§åº¦ä¸ºå¤šå°‘
+				.displayer(new FadeInBitmapDisplayer(100))// æ·¡å…¥
 				.build();
 		return options;
 	}

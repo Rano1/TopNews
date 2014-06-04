@@ -32,21 +32,21 @@ public class SwitchButton extends CompoundButton {
 	private static final int SANS = 1;
 	private static final int SERIF = 2;
 	private static final int MONOSPACE = 3;
-	/** SwitchµÄÔË¶¯¹ì¼£ £¬¼È±³¾° */
+	/** Switchçš„è¿åŠ¨è½¨è¿¹ ï¼Œæ—¢èƒŒæ™¯ */
 	private Drawable mThumbDrawable;
-	/** SwitchµÄ=²Ù×÷°´Å¥£¬¼´¿ª¹Ø°´Å¥ */
+	/** Switchçš„=æ“ä½œæŒ‰é’®ï¼Œå³å¼€å…³æŒ‰é’® */
 	private Drawable mTrackDrawable;
-	/** SwitchµÄÖĞÏÖÊµµÄ onºÍoffÇé¿öÏÂ×ÖÌå´óĞ¡ */
+	/** Switchçš„ä¸­ç°å®çš„ onå’Œoffæƒ…å†µä¸‹å­—ä½“å¤§å° */
 	private int mThumbTextPadding;
-	/** Switch¿Ø¼şµÄ×îĞ¡¿í¶È */
+	/** Switchæ§ä»¶çš„æœ€å°å®½åº¦ */
 	private int mSwitchMinWidth;
-	/** Switch¿Ø¼şµÄpaddingÊôĞÔÖµ */
+	/** Switchæ§ä»¶çš„paddingå±æ€§å€¼ */
 	private int mSwitchPadding;
-	/** Switch¿Ø¼şµÄÑ¡ÖĞÇé¿öÏÂµÄ×Ö·û´® */
+	/** Switchæ§ä»¶çš„é€‰ä¸­æƒ…å†µä¸‹çš„å­—ç¬¦ä¸² */
 	private CharSequence mTextOn;
-	/** Switch¿Ø¼şµÄÎ´Ñ¡ÖĞÇé¿öÏÂµÄ×Ö·û´® */
+	/** Switchæ§ä»¶çš„æœªé€‰ä¸­æƒ…å†µä¸‹çš„å­—ç¬¦ä¸² */
 	private CharSequence mTextOff;
-	/** Switch¿Ø¼şµÄ´¥ÃşÊ±ºòµÄÄ£Ê½ */
+	/** Switchæ§ä»¶çš„è§¦æ‘¸æ—¶å€™çš„æ¨¡å¼ */
 	private int mTouchMode;
 	private int mTouchSlop;
 	private float mTouchX;
@@ -63,7 +63,7 @@ public class SwitchButton extends CompoundButton {
 	private int mSwitchTop;
 	private int mSwitchRight;
 	private int mSwitchBottom;
-	/** textµÄ»­±Ê¹¤¾ß */
+	/** textçš„ç”»ç¬”å·¥å…· */
 	private TextPaint mTextPaint;
 	private ColorStateList mTextColors;
 	private Layout mOnLayout;
@@ -93,28 +93,28 @@ public class SwitchButton extends CompoundButton {
 		Resources res = getResources();
 		mTextPaint.density = res.getDisplayMetrics().density;
 		TypedArray a = context.obtainStyledAttributes(attrs,
-				R.styleable.SwitchButton, defStyle, 0);// ´ÓÅäÖÃÎÄ¼şÖĞ»ñÈ¡Ïà¹ØÅäÖÃ
-		mThumbDrawable = a.getDrawable(R.styleable.SwitchButton_thumb);// »ñÈ¡ÅäÖÃµÄ¹ì¼£×ÊÔ´
-		mTrackDrawable = a.getDrawable(R.styleable.SwitchButton_track);// »ñÈ¡ÅäÖÃµÄ¿ª¹Ø×ÊÔ´
-		mTextOn = a.getText(R.styleable.SwitchButton_textOn);// »ñÈ¡ÅäÖÃÖĞ Ñ¡ÖĞÇé¿öÏÂµÄÏÔÊ¾ÎÄ×Ö
+				R.styleable.SwitchButton, defStyle, 0);// ä»é…ç½®æ–‡ä»¶ä¸­è·å–ç›¸å…³é…ç½®
+		mThumbDrawable = a.getDrawable(R.styleable.SwitchButton_thumb);// è·å–é…ç½®çš„è½¨è¿¹èµ„æº
+		mTrackDrawable = a.getDrawable(R.styleable.SwitchButton_track);// è·å–é…ç½®çš„å¼€å…³èµ„æº
+		mTextOn = a.getText(R.styleable.SwitchButton_textOn);// è·å–é…ç½®ä¸­ é€‰ä¸­æƒ…å†µä¸‹çš„æ˜¾ç¤ºæ–‡å­—
 																// on
-		mTextOff = a.getText(R.styleable.SwitchButton_textOff);// »ñÈ¡ÅäÖÃµÄ
-																// ÎªÑ¡ÖĞÇé¿öÏÂµÄÏÔÊ¾ÎÄ×Ö
+		mTextOff = a.getText(R.styleable.SwitchButton_textOff);// è·å–é…ç½®çš„
+																// ä¸ºé€‰ä¸­æƒ…å†µä¸‹çš„æ˜¾ç¤ºæ–‡å­—
 																// off
 		mThumbTextPadding = a.getDimensionPixelSize(
-				R.styleable.SwitchButton_thumbTextPadding, 0);// »ñÈ¡ÅäÖÃµÄ°´Å¥×ÖÌå´óĞ¡
+				R.styleable.SwitchButton_thumbTextPadding, 0);// è·å–é…ç½®çš„æŒ‰é’®å­—ä½“å¤§å°
 		mSwitchMinWidth = a.getDimensionPixelSize(
-				R.styleable.SwitchButton_switchMinWidth, 0);// »ñÈ¡ÅäÖÃµÄ×îĞ¡¿í¶È
+				R.styleable.SwitchButton_switchMinWidth, 0);// è·å–é…ç½®çš„æœ€å°å®½åº¦
 		mSwitchPadding = a.getDimensionPixelSize(
-				R.styleable.SwitchButton_switchPadding, 0);// »ñÈ¡ÅäÖÃµÄpaddingÊôĞÔ
+				R.styleable.SwitchButton_switchPadding, 0);// è·å–é…ç½®çš„paddingå±æ€§
 
 		int appearance = a.getResourceId(
-				R.styleable.SwitchButton_switchTextAppearance, 0);// »ñÈ¡ÅäÖÃÎÄ¼şÖĞ»ñÈ¡ÏÔÊ¾×ÖÌå¸ñÊ½
-		// ÅĞ¶ÏÉè¶¨¸ñÊ½ÊÇ·ñ´æÔÚ£¬´æÔÚµÄ»°¾Í¸³Öµ
+				R.styleable.SwitchButton_switchTextAppearance, 0);// è·å–é…ç½®æ–‡ä»¶ä¸­è·å–æ˜¾ç¤ºå­—ä½“æ ¼å¼
+		// åˆ¤æ–­è®¾å®šæ ¼å¼æ˜¯å¦å­˜åœ¨ï¼Œå­˜åœ¨çš„è¯å°±èµ‹å€¼
 		if (appearance != 0) {
 			setSwitchTextAppearance(context, appearance);
 		}
-		a.recycle();// »ØÊÕÅäÖÃÎÄ¼ş×ÊÔ´
+		a.recycle();// å›æ”¶é…ç½®æ–‡ä»¶èµ„æº
 		ViewConfiguration config = ViewConfiguration.get(context);
 		mTouchSlop = config.getScaledTouchSlop();
 		mMinFlingVelocity = config.getScaledMinimumFlingVelocity();
@@ -123,7 +123,7 @@ public class SwitchButton extends CompoundButton {
 	}
 
 	/**
-	 * ÉèÖÃon,offÏÔÊ¾µÄ×ÖÌå´óĞ¡¼°¸ñÊ½
+	 * è®¾ç½®on,offæ˜¾ç¤ºçš„å­—ä½“å¤§å°åŠæ ¼å¼
 	 * */
 	public void setSwitchTextAppearance(Context context, int resid) {
 		mContext = context;
@@ -152,27 +152,27 @@ public class SwitchButton extends CompoundButton {
 		styleIndex = appearance
 				.getInt(R.styleable.TextAppearance_textStyle, -1);
 		setSwitchTypefaceByIndex(typefaceIndex, styleIndex);
-		appearance.recycle();// »ØÊÕÅäÖÃÎÄ¼ş×ÊÔ´
+		appearance.recycle();// å›æ”¶é…ç½®æ–‡ä»¶èµ„æº
 	}
 
-	/** ¸ù¾İ×Ô¶¨ÒåµÄÅäÖÃÊôĞÔ£¬ÉèÖÃ×ÖÌå·ç¸ñ */
+	/** æ ¹æ®è‡ªå®šä¹‰çš„é…ç½®å±æ€§ï¼Œè®¾ç½®å­—ä½“é£æ ¼ */
 	private void setSwitchTypefaceByIndex(int typefaceIndex, int styleIndex) {
 		Typeface tf = null;
 		switch (typefaceIndex) {
 		case SANS:
-			tf = Typeface.SANS_SERIF;// Ä¬ÈÏµÄÎŞ³ÄÏß×ÖÌå·ç¸ñ
+			tf = Typeface.SANS_SERIF;// é»˜è®¤çš„æ— è¡¬çº¿å­—ä½“é£æ ¼
 			break;
 		case SERIF:
-			tf = Typeface.SERIF;// Ä¬ÈÏµÄ³ÄÏß×ÖÌå·ç¸ñ
+			tf = Typeface.SERIF;// é»˜è®¤çš„è¡¬çº¿å­—ä½“é£æ ¼
 			break;
 		case MONOSPACE:
-			tf = Typeface.MONOSPACE;// Ä¬ÈÏµÄµÈ¿í×ÖÌå×ÖÌå·ç¸ñ
+			tf = Typeface.MONOSPACE;// é»˜è®¤çš„ç­‰å®½å­—ä½“å­—ä½“é£æ ¼
 			break;
 		}
 		setSwitchTypeface(tf, styleIndex);
 	}
 
-	/** ÉèÖÃ×ÖÌå·ç¸ñ */
+	/** è®¾ç½®å­—ä½“é£æ ¼ */
 	public void setSwitchTypeface(Typeface tf, int style) {
 		if (style > 0) {
 			if (tf == null) {
@@ -200,29 +200,29 @@ public class SwitchButton extends CompoundButton {
 		}
 	}
 
-	/** »ñÈ¡Ñ¡ÖĞ×´Ì¬ÏÂµÄÏÔÊ¾ÎÄ×Ö */
+	/** è·å–é€‰ä¸­çŠ¶æ€ä¸‹çš„æ˜¾ç¤ºæ–‡å­— */
 	public CharSequence getTextOn() {
 		return mTextOn;
 	}
 
-	/** Éè¶¨Ñ¡ÖĞ×´Ì¬ÏÂµÄÏÔÊ¾ÎÄ×Ö */
+	/** è®¾å®šé€‰ä¸­çŠ¶æ€ä¸‹çš„æ˜¾ç¤ºæ–‡å­— */
 	public void setTextOn(CharSequence textOn) {
 		mTextOn = textOn;
 		requestLayout();
 	}
 
-	/** »ñÈ¡·ÇÑ¡ÖĞ×´Ì¬ÏÂµÄÏÔÊ¾ÎÄ×Ö */
+	/** è·å–éé€‰ä¸­çŠ¶æ€ä¸‹çš„æ˜¾ç¤ºæ–‡å­— */
 	public CharSequence getTextOff() {
 		return mTextOff;
 	}
 
-	/** Éè¶¨·ÇÑ¡ÖĞ×´Ì¬ÏÂµÄÏÔÊ¾ÎÄ×Ö */
+	/** è®¾å®šéé€‰ä¸­çŠ¶æ€ä¸‹çš„æ˜¾ç¤ºæ–‡å­— */
 	public void setTextOff(CharSequence textOff) {
 		mTextOff = textOff;
 		requestLayout();
 	}
 
-	/** ²âÁ¿¿Ø¼ş¿í¸ß£¬¹©»æÍ¼Ê±Ê¹ÓÃ¡£ */
+	/** æµ‹é‡æ§ä»¶å®½é«˜ï¼Œä¾›ç»˜å›¾æ—¶ä½¿ç”¨ã€‚ */
 	@Override
 	public void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
 		final int widthMode = MeasureSpec.getMode(widthMeasureSpec);
@@ -303,7 +303,7 @@ public class SwitchButton extends CompoundButton {
 	}
 
 	/**
-	 * @ÃèÊö£ºreturn true ËµÃ÷¿ª¹ØÔÚ(x,y)Ä¿±êÇøÓòÄÚ
+	 * @æè¿°ï¼šreturn true è¯´æ˜å¼€å…³åœ¨(x,y)ç›®æ ‡åŒºåŸŸå†…
 	 */
 	private boolean hitThumb(float x, float y) {
 		mThumbDrawable.getPadding(mTempRect);
@@ -317,7 +317,7 @@ public class SwitchButton extends CompoundButton {
 				&& y < thumbBottom;
 	}
 
-	/** ´«µİ´¥ÃşÆÁ´¥ÃşÊÂ¼ş */
+	/** ä¼ é€’è§¦æ‘¸å±è§¦æ‘¸äº‹ä»¶ */
 	@Override
 	public boolean onTouchEvent(MotionEvent ev) {
 		mVelocityTracker.addMovement(ev);
@@ -419,7 +419,7 @@ public class SwitchButton extends CompoundButton {
 		return mThumbPosition >= getThumbScrollRange() / 2;
 	}
 
-	// ÉèÖÃÑ¡ÖĞµÄ×´Ì¬£¨Ñ¡ÖĞ:true ·ÇÑ¡ÖĞ: false£©
+	// è®¾ç½®é€‰ä¸­çš„çŠ¶æ€ï¼ˆé€‰ä¸­:true éé€‰ä¸­: falseï¼‰
 	@Override
 	public void setChecked(boolean checked) {
 		super.setChecked(checked);

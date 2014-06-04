@@ -41,7 +41,7 @@ public class NewsFragment extends Fragment {
 	int channel_id;
 	ImageView detail_loading;
 	public final static int SET_NEWSLIST = 0;
-	//ToastÌáÊ¾¿ò
+	//Toastæç¤ºæ¡†
 	private RelativeLayout notify_view;
 	private TextView notify_view_text;
 	@Override
@@ -60,11 +60,11 @@ public class NewsFragment extends Fragment {
 		this.activity = activity;
 		super.onAttach(activity);
 	}
-	/** ´Ë·½·¨ÒâË¼ÎªfragmentÊÇ·ñ¿É¼û ,¿É¼ûÊ±ºò¼ÓÔØÊı¾İ */
+	/** æ­¤æ–¹æ³•æ„æ€ä¸ºfragmentæ˜¯å¦å¯è§ ,å¯è§æ—¶å€™åŠ è½½æ•°æ® */
 	@Override
 	public void setUserVisibleHint(boolean isVisibleToUser) {
 		if (isVisibleToUser) {
-			//fragment¿É¼ûÊ±¼ÓÔØÊı¾İ
+			//fragmentå¯è§æ—¶åŠ è½½æ•°æ®
 			if(newsList !=null && newsList.size() !=0){
 				handler.obtainMessage(SET_NEWSLIST).sendToTarget();
 			}else{
@@ -83,7 +83,7 @@ public class NewsFragment extends Fragment {
 				}).start();
 			}
 		}else{
-			//fragment²»¿É¼ûÊ±²»Ö´ĞĞ²Ù×÷
+			//fragmentä¸å¯è§æ—¶ä¸æ‰§è¡Œæ“ä½œ
 		}
 		super.setUserVisibleHint(isVisibleToUser);
 	}
@@ -96,7 +96,7 @@ public class NewsFragment extends Fragment {
 		mListView = (HeadListView) view.findViewById(R.id.mListView);
 		TextView item_textview = (TextView)view.findViewById(R.id.item_textview);
 		detail_loading = (ImageView)view.findViewById(R.id.detail_loading);
-		//ToastÌáÊ¾¿ò
+		//Toastæç¤ºæ¡†
 		notify_view = (RelativeLayout)view.findViewById(R.id.notify_view);
 		notify_view_text = (TextView)view.findViewById(R.id.notify_view_text);
 		item_textview.setText(text);
@@ -116,9 +116,9 @@ public class NewsFragment extends Fragment {
 				detail_loading.setVisibility(View.GONE);
 				if(mAdapter == null){
 					mAdapter = new NewsAdapter(activity, newsList);
-					//ÅĞ¶ÏÊÇ²»ÊÇ³ÇÊĞµÄÆµµÀ
+					//åˆ¤æ–­æ˜¯ä¸æ˜¯åŸå¸‚çš„é¢‘é“
 					if(channel_id == Constants.CHANNEL_CITY){
-						//ÊÇ³ÇÊĞÆµµÀ
+						//æ˜¯åŸå¸‚é¢‘é“
 						mAdapter.setCityChannel(true);
 						initCityChannel();
 					}
@@ -156,7 +156,7 @@ public class NewsFragment extends Fragment {
 		}
 	};
 	
-	/* ³õÊ¼»¯Ñ¡Ôñ³ÇÊĞµÄheader*/
+	/* åˆå§‹åŒ–é€‰æ‹©åŸå¸‚çš„header*/
 	public void initCityChannel() {
 		View headview = LayoutInflater.from(activity).inflate(R.layout.city_category_list_tip, null);
 		TextView chose_city_tip = (TextView) headview.findViewById(R.id.chose_city_tip);
@@ -172,7 +172,7 @@ public class NewsFragment extends Fragment {
 		mListView.addHeaderView(headview);
 	}
 	
-	/* ³õÊ¼»¯Í¨ÖªÀ¸Ä¿*/
+	/* åˆå§‹åŒ–é€šçŸ¥æ ç›®*/
 	private void initNotify() {
 		new Handler().postDelayed(new Runnable() {
 			
@@ -192,7 +192,7 @@ public class NewsFragment extends Fragment {
 			}
 		}, 1000);
 	}
-	/* ´İ»ÙÊÓÍ¼ */
+	/* æ‘§æ¯è§†å›¾ */
 	@Override
 	public void onDestroyView() {
 		// TODO Auto-generated method stub
@@ -200,7 +200,7 @@ public class NewsFragment extends Fragment {
 		Log.d("onDestroyView", "channel_id = " + channel_id);
 		mAdapter = null;
 	}
-	/* ´İ»Ù¸ÃFragment£¬Ò»°ãÊÇFragmentActivity ±»´İ»ÙµÄÊ±ºò°éËæ×Å´İ»Ù */
+	/* æ‘§æ¯è¯¥Fragmentï¼Œä¸€èˆ¬æ˜¯FragmentActivity è¢«æ‘§æ¯çš„æ—¶å€™ä¼´éšç€æ‘§æ¯ */
 	@Override
 	public void onDestroy() {
 		// TODO Auto-generated method stub

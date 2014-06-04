@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 /**
- * 重写的ListView,让每条新闻的时间显示
+ * 閲嶅啓鐨凩istView,璁╂瘡鏉℃柊闂荤殑鏃堕棿鏄剧ず
  */
 public class HeadListView extends ListView {
 
@@ -62,7 +62,7 @@ public class HeadListView extends ListView {
 	public void setPinnedHeaderView(View view) {
 		mHeaderView = view;
 		if (mHeaderView != null) {
-			//listview的上边和下边有黑色的阴影。xml中： android:fadingEdge="none"  
+			//listview鐨勪笂杈瑰拰涓嬭竟鏈夐粦鑹茬殑闃村奖銆倄ml涓細 android:fadingEdge="none"  
 			setFadingEdgeLength(0);
 		}
 		requestLayout();

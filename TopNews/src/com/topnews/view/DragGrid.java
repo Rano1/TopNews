@@ -25,61 +25,61 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class DragGrid extends GridView {
-	/** µã»÷Ê±ºòµÄXÎ»ÖÃ */
+	/** ç‚¹å‡»æ—¶å€™çš„Xä½ç½® */
 	public int downX;
-	/** µã»÷Ê±ºòµÄYÎ»ÖÃ */
+	/** ç‚¹å‡»æ—¶å€™çš„Yä½ç½® */
 	public int downY;
-	/** µã»÷Ê±ºò¶ÔÓ¦Õû¸ö½çÃæµÄXÎ»ÖÃ */
+	/** ç‚¹å‡»æ—¶å€™å¯¹åº”æ•´ä¸ªç•Œé¢çš„Xä½ç½® */
 	public int windowX;
-	/** µã»÷Ê±ºò¶ÔÓ¦Õû¸ö½çÃæµÄYÎ»ÖÃ */
+	/** ç‚¹å‡»æ—¶å€™å¯¹åº”æ•´ä¸ªç•Œé¢çš„Yä½ç½® */
 	public int windowY;
-	/** ÆÁÄ»ÉÏµÄX */
+	/** å±å¹•ä¸Šçš„X */
 	private int win_view_x;
-	/** ÆÁÄ»ÉÏµÄY*/
+	/** å±å¹•ä¸Šçš„Y*/
 	private int win_view_y;
-	/** ÍÏ¶¯µÄÀïxµÄ¾àÀë  */
+	/** æ‹–åŠ¨çš„é‡Œxçš„è·ç¦»  */
 	int dragOffsetX;
-	/** ÍÏ¶¯µÄÀïYµÄ¾àÀë  */
+	/** æ‹–åŠ¨çš„é‡ŒYçš„è·ç¦»  */
 	int dragOffsetY;
-	/** ³¤°´Ê±ºò¶ÔÓ¦postion */
+	/** é•¿æŒ‰æ—¶å€™å¯¹åº”postion */
 	public int dragPosition;
-	/** Upºó¶ÔÓ¦µÄITEMµÄPosition */
+	/** Upåå¯¹åº”çš„ITEMçš„Position */
 	private int dropPosition;
-	/** ¿ªÊ¼ÍÏ¶¯µÄITEMµÄPosition*/
+	/** å¼€å§‹æ‹–åŠ¨çš„ITEMçš„Position*/
 	private int startPosition;
-	/** item¸ß */
+	/** itemé«˜ */
 	private int itemHeight;
-	/** item¿í */
+	/** itemå®½ */
 	private int itemWidth;
-	/** ÍÏ¶¯µÄÊ±ºò¶ÔÓ¦ITEMµÄVIEW */
+	/** æ‹–åŠ¨çš„æ—¶å€™å¯¹åº”ITEMçš„VIEW */
 	private View dragImageView = null;
-	/** ³¤°´µÄÊ±ºòITEMµÄVIEW*/
+	/** é•¿æŒ‰çš„æ—¶å€™ITEMçš„VIEW*/
 	private ViewGroup dragItemView = null;
-	/** WindowManager¹ÜÀíÆ÷ */
+	/** WindowManagerç®¡ç†å™¨ */
 	private WindowManager windowManager = null;
 	/** */
 	private WindowManager.LayoutParams windowParams = null;
-	/** item×ÜÁ¿*/
+	/** itemæ€»é‡*/
 	private int itemTotalCount;
-	/** Ò»ĞĞµÄITEMÊıÁ¿*/
+	/** ä¸€è¡Œçš„ITEMæ•°é‡*/
 	private int nColumns = 4;
-	/** ĞĞÊı */
+	/** è¡Œæ•° */
 	private int nRows;
-	/** Ê£Óà²¿·Ö */
+	/** å‰©ä½™éƒ¨åˆ† */
 	private int Remainder;
-	/** ÊÇ·ñÔÚÒÆ¶¯ */
+	/** æ˜¯å¦åœ¨ç§»åŠ¨ */
 	private boolean isMoving = false;
 	/** */
 	private int holdPosition;
-	/** ÍÏ¶¯µÄÊ±ºò·Å´óµÄ±¶Êı */
+	/** æ‹–åŠ¨çš„æ—¶å€™æ”¾å¤§çš„å€æ•° */
 	private double dragScale = 1.2D;
-	/** Õğ¶¯Æ÷  */
+	/** éœ‡åŠ¨å™¨  */
 	private Vibrator mVibrator;
-	/** Ã¿¸öITEMÖ®¼äµÄË®Æ½¼ä¾à */
+	/** æ¯ä¸ªITEMä¹‹é—´çš„æ°´å¹³é—´è· */
 	private int mHorizontalSpacing = 15;
-	/** Ã¿¸öITEMÖ®¼äµÄÊúÖ±¼ä¾à */
+	/** æ¯ä¸ªITEMä¹‹é—´çš„ç«–ç›´é—´è· */
 	private int mVerticalSpacing = 15;
-	/* ÒÆ¶¯Ê±ºò×îºó¸ö¶¯»­µÄID */
+	/* ç§»åŠ¨æ—¶å€™æœ€åä¸ªåŠ¨ç”»çš„ID */
 	private String LastAnimationID;
 	
 	public DragGrid(Context context) {
@@ -99,7 +99,7 @@ public class DragGrid extends GridView {
 
 	public void init(Context context){
 		mVibrator = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
-		//½«²¼¾ÖÎÄ¼şÖĞÉèÖÃµÄ¼ä¾àdip×ªÎªpx
+		//å°†å¸ƒå±€æ–‡ä»¶ä¸­è®¾ç½®çš„é—´è·dipè½¬ä¸ºpx
 		mHorizontalSpacing = DataTools.dip2px(context, mHorizontalSpacing);
 	}
 	
@@ -121,7 +121,7 @@ public class DragGrid extends GridView {
 		// TODO Auto-generated method stub
 		boolean bool = true;
 		if (dragImageView != null && dragPosition != AdapterView.INVALID_POSITION) {
-			// ÒÆ¶¯Ê±ºòµÄ¶ÔÓ¦x,yÎ»ÖÃ
+			// ç§»åŠ¨æ—¶å€™çš„å¯¹åº”x,yä½ç½®
 			bool = super.onTouchEvent(ev);
 			int x = (int) ev.getX();
 			int y = (int) ev.getY();
@@ -154,7 +154,7 @@ public class DragGrid extends GridView {
 		return super.onTouchEvent(ev);
 	}
 	
-	/** ÔÚÍÏ¶¯µÄÇé¿ö */
+	/** åœ¨æ‹–åŠ¨çš„æƒ…å†µ */
 	private void onDrag(int x, int y , int rawx , int rawy) {
 		if (dragImageView != null) {
 			windowParams.alpha = 0.6f;
@@ -168,21 +168,21 @@ public class DragGrid extends GridView {
 		}
 	}
 
-	/** ÔÚËÉÊÖÏÂ·ÅµÄÇé¿ö */
+	/** åœ¨æ¾æ‰‹ä¸‹æ”¾çš„æƒ…å†µ */
 	private void onDrop(int x, int y) {
-		// ¸ù¾İÍÏ¶¯µ½µÄx,y×ø±ê»ñÈ¡ÍÏ¶¯Î»ÖÃÏÂ·½µÄITEM¶ÔÓ¦µÄPOSTION
+		// æ ¹æ®æ‹–åŠ¨åˆ°çš„x,yåæ ‡è·å–æ‹–åŠ¨ä½ç½®ä¸‹æ–¹çš„ITEMå¯¹åº”çš„POSTION
 		int tempPostion = pointToPosition(x, y);
 //		if (tempPostion != AdapterView.INVALID_POSITION) {
 			dropPosition = tempPostion;
 			DragAdapter mDragAdapter = (DragAdapter) getAdapter();
-			//ÏÔÊ¾¸ÕÍÏ¶¯µÄITEM
+			//æ˜¾ç¤ºåˆšæ‹–åŠ¨çš„ITEM
 			mDragAdapter.setShowDropItem(true);
-			//Ë¢ĞÂÊÊÅäÆ÷£¬ÈÃ¶ÔÓ¦µÄITEMÏÔÊ¾
+			//åˆ·æ–°é€‚é…å™¨ï¼Œè®©å¯¹åº”çš„ITEMæ˜¾ç¤º
 			mDragAdapter.notifyDataSetChanged();
 //		}
 	}
 	/**
-	 * ³¤°´µã»÷¼àÌı
+	 * é•¿æŒ‰ç‚¹å‡»ç›‘å¬
 	 * @param ev
 	 */
 	public void setOnItemClickListener(final MotionEvent ev) {
@@ -191,10 +191,10 @@ public class DragGrid extends GridView {
 			@Override
 			public boolean onItemLongClick(AdapterView<?> parent, View view,
 					int position, long id) {
-				int x = (int) ev.getX();// ³¤°²ÊÂ¼şµÄXÎ»ÖÃ
-				int y = (int) ev.getY();// ³¤°²ÊÂ¼şµÄyÎ»ÖÃ
+				int x = (int) ev.getX();// é•¿å®‰äº‹ä»¶çš„Xä½ç½®
+				int y = (int) ev.getY();// é•¿å®‰äº‹ä»¶çš„yä½ç½®
 
-				startPosition = position;// µÚÒ»´Îµã»÷µÄpostion
+				startPosition = position;// ç¬¬ä¸€æ¬¡ç‚¹å‡»çš„postion
 				dragPosition = position;
 				if (startPosition <= 1) {
 					return false;
@@ -206,25 +206,25 @@ public class DragGrid extends GridView {
 				itemHeight = dragViewGroup.getHeight();
 				itemWidth = dragViewGroup.getWidth();
 				itemTotalCount = DragGrid.this.getCount();
-				int row = itemTotalCount / nColumns;// Ëã³öĞĞÊı
-				Remainder = (itemTotalCount % nColumns);// Ëã³ö×îºóÒ»ĞĞ¶àÓàµÄÊıÁ¿
+				int row = itemTotalCount / nColumns;// ç®—å‡ºè¡Œæ•°
+				Remainder = (itemTotalCount % nColumns);// ç®—å‡ºæœ€åä¸€è¡Œå¤šä½™çš„æ•°é‡
 				if (Remainder != 0) {
 					nRows = row + 1;
 				} else {
 					nRows = row;
 				}
-				// Èç¹ûÌØÊâµÄÕâ¸ö²»µÈÓÚÍÏ¶¯µÄÄÇ¸ö,²¢ÇÒ²»µÈÓÚ-1
+				// å¦‚æœç‰¹æ®Šçš„è¿™ä¸ªä¸ç­‰äºæ‹–åŠ¨çš„é‚£ä¸ª,å¹¶ä¸”ä¸ç­‰äº-1
 				if (dragPosition != AdapterView.INVALID_POSITION) {
-					// ÊÍ·ÅµÄ×ÊÔ´Ê¹ÓÃµÄ»æÍ¼»º´æ¡£Èç¹ûÄãµ÷ÓÃbuildDrawingCache()ÊÖ¶¯Ã»ÓĞµ÷ÓÃsetDrawingCacheEnabled(ÕæÕıµÄ),ÄãÓ¦¸ÃÇåÀí»º´æÊ¹ÓÃÕâÖÖ·½·¨¡£
-					win_view_x = windowX - dragViewGroup.getLeft();//VIEWÏà¶Ô×Ô¼ºµÄX£¬°ë½ï
-					win_view_y = windowY - dragViewGroup.getTop();//VIEWÏà¶Ô×Ô¼ºµÄy£¬°ë½ï
-					dragOffsetX = (int) (ev.getRawX() - x);//ÊÖÖ¸ÔÚÆÁÄ»µÄÉÏXÎ»ÖÃ-ÊÖÖ¸ÔÚ¿Ø¼şÖĞµÄÎ»ÖÃ¾ÍÊÇ¾àÀë×î×ó±ßµÄ¾àÀë
-					dragOffsetY = (int) (ev.getRawY() - y);//ÊÖÖ¸ÔÚÆÁÄ»µÄÉÏyÎ»ÖÃ-ÊÖÖ¸ÔÚ¿Ø¼şÖĞµÄÎ»ÖÃ¾ÍÊÇ¾àÀë×îÉÏ±ßµÄ¾àÀë
+					// é‡Šæ”¾çš„èµ„æºä½¿ç”¨çš„ç»˜å›¾ç¼“å­˜ã€‚å¦‚æœä½ è°ƒç”¨buildDrawingCache()æ‰‹åŠ¨æ²¡æœ‰è°ƒç”¨setDrawingCacheEnabled(çœŸæ­£çš„),ä½ åº”è¯¥æ¸…ç†ç¼“å­˜ä½¿ç”¨è¿™ç§æ–¹æ³•ã€‚
+					win_view_x = windowX - dragViewGroup.getLeft();//VIEWç›¸å¯¹è‡ªå·±çš„Xï¼ŒåŠæ–¤
+					win_view_y = windowY - dragViewGroup.getTop();//VIEWç›¸å¯¹è‡ªå·±çš„yï¼ŒåŠæ–¤
+					dragOffsetX = (int) (ev.getRawX() - x);//æ‰‹æŒ‡åœ¨å±å¹•çš„ä¸ŠXä½ç½®-æ‰‹æŒ‡åœ¨æ§ä»¶ä¸­çš„ä½ç½®å°±æ˜¯è·ç¦»æœ€å·¦è¾¹çš„è·ç¦»
+					dragOffsetY = (int) (ev.getRawY() - y);//æ‰‹æŒ‡åœ¨å±å¹•çš„ä¸Šyä½ç½®-æ‰‹æŒ‡åœ¨æ§ä»¶ä¸­çš„ä½ç½®å°±æ˜¯è·ç¦»æœ€ä¸Šè¾¹çš„è·ç¦»
 					dragItemView = dragViewGroup;
 					dragViewGroup.destroyDrawingCache();
 					dragViewGroup.setDrawingCacheEnabled(true);
 					Bitmap dragBitmap = Bitmap.createBitmap(dragViewGroup.getDrawingCache());
-					mVibrator.vibrate(50);//ÉèÖÃÕğ¶¯Ê±¼ä
+					mVibrator.vibrate(50);//è®¾ç½®éœ‡åŠ¨æ—¶é—´
 					startDrag(dragBitmap, (int)ev.getRawX(),  (int)ev.getRawY());
 					hideDropItem();
 					dragViewGroup.setVisibility(View.INVISIBLE);
@@ -239,20 +239,20 @@ public class DragGrid extends GridView {
 
 	public void startDrag(Bitmap dragBitmap, int x, int y) {
 		stopDrag();
-		windowParams = new WindowManager.LayoutParams();// »ñÈ¡WINDOW½çÃæµÄ
-		//Gravity.TOP|Gravity.LEFT;Õâ¸ö±ØĞë¼Ó  
+		windowParams = new WindowManager.LayoutParams();// è·å–WINDOWç•Œé¢çš„
+		//Gravity.TOP|Gravity.LEFT;è¿™ä¸ªå¿…é¡»åŠ   
 		windowParams.gravity = Gravity.TOP | Gravity.LEFT;
-		// ¼ÆËãµ±Ç°ÏîLeftÀë´°ÌåµÄ¾àÀë
+		// è®¡ç®—å½“å‰é¡¹Leftç¦»çª—ä½“çš„è·ç¦»
 //		windowParams.x = x - (int)((itemWidth / 2) * dragScale);
 //		windowParams.y = y - (int) ((itemHeight / 2) * dragScale);
-		//µÃµ½preview×óÉÏ½ÇÏà¶ÔÓÚÆÁÄ»µÄ×ø±ê   
+		//å¾—åˆ°previewå·¦ä¸Šè§’ç›¸å¯¹äºå±å¹•çš„åæ ‡   
 		windowParams.x = x - win_view_x;
 		windowParams.y = y  - win_view_y; 
-//		this.windowParams.x = (x - this.win_view_x + this.viewX);//Î»ÖÃµÄxÖµ
-//		this.windowParams.y = (y - this.win_view_y + this.viewY);//Î»ÖÃµÄyÖµ
-		//ÉèÖÃÍÏ×§itemµÄ¿íºÍ¸ß  
-		windowParams.width = (int) (dragScale * dragBitmap.getWidth());// ·Å´ódragScale±¶£¬¿ÉÒÔÉèÖÃÍÏ¶¯ºóµÄ±¶Êı
-		windowParams.height = (int) (dragScale * dragBitmap.getHeight());// ·Å´ódragScale±¶£¬¿ÉÒÔÉèÖÃÍÏ¶¯ºóµÄ±¶Êı
+//		this.windowParams.x = (x - this.win_view_x + this.viewX);//ä½ç½®çš„xå€¼
+//		this.windowParams.y = (y - this.win_view_y + this.viewY);//ä½ç½®çš„yå€¼
+		//è®¾ç½®æ‹–æ‹½itemçš„å®½å’Œé«˜  
+		windowParams.width = (int) (dragScale * dragBitmap.getWidth());// æ”¾å¤§dragScaleå€ï¼Œå¯ä»¥è®¾ç½®æ‹–åŠ¨åçš„å€æ•°
+		windowParams.height = (int) (dragScale * dragBitmap.getHeight());// æ”¾å¤§dragScaleå€ï¼Œå¯ä»¥è®¾ç½®æ‹–åŠ¨åçš„å€æ•°
 		this.windowParams.flags = WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE                           
                 | WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE                           
                 | WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON                           
@@ -266,7 +266,7 @@ public class DragGrid extends GridView {
 		dragImageView = iv;
 	}
 
-	/** Í£Ö¹ÍÏ¶¯ £¬ÊÍ·Å²¢³õÊ¼»¯ */
+	/** åœæ­¢æ‹–åŠ¨ ï¼Œé‡Šæ”¾å¹¶åˆå§‹åŒ– */
 	private void stopDrag() {
 		if (dragImageView != null) {
 			windowManager.removeView(dragImageView);
@@ -274,35 +274,35 @@ public class DragGrid extends GridView {
 		}
 	}
 
-	/** ÔÚScrollViewÄÚ£¬ËùÒÔÒª½øĞĞ¼ÆËã¸ß¶È */
+	/** åœ¨ScrollViewå†…ï¼Œæ‰€ä»¥è¦è¿›è¡Œè®¡ç®—é«˜åº¦ */
 	@Override
 	public void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
 		int expandSpec = MeasureSpec.makeMeasureSpec(Integer.MAX_VALUE >> 2,MeasureSpec.AT_MOST);
 		super.onMeasure(widthMeasureSpec, expandSpec);
 	}
 	
-	/** Òş²Ø ·ÅÏÂ µÄITEM*/
+	/** éšè— æ”¾ä¸‹ çš„ITEM*/
 	private void hideDropItem() {
 		((DragAdapter) getAdapter()).setShowDropItem(false);
 	}
 	
-	/** »ñÈ¡ÒÆ¶¯¶¯»­ */
+	/** è·å–ç§»åŠ¨åŠ¨ç”» */
 	public Animation getMoveAnimation(float toXValue, float toYValue) {
 		TranslateAnimation mTranslateAnimation = new TranslateAnimation(
 				Animation.RELATIVE_TO_SELF, 0.0F,
 				Animation.RELATIVE_TO_SELF,toXValue, 
 				Animation.RELATIVE_TO_SELF, 0.0F,
-				Animation.RELATIVE_TO_SELF, toYValue);// µ±Ç°Î»ÖÃÒÆ¶¯µ½Ö¸¶¨Î»ÖÃ
-		mTranslateAnimation.setFillAfter(true);// ÉèÖÃÒ»¸ö¶¯»­Ğ§¹ûÖ´ĞĞÍê±Ïºó£¬View¶ÔÏó±£ÁôÔÚÖÕÖ¹µÄÎ»ÖÃ¡£
+				Animation.RELATIVE_TO_SELF, toYValue);// å½“å‰ä½ç½®ç§»åŠ¨åˆ°æŒ‡å®šä½ç½®
+		mTranslateAnimation.setFillAfter(true);// è®¾ç½®ä¸€ä¸ªåŠ¨ç”»æ•ˆæœæ‰§è¡Œå®Œæ¯•åï¼ŒViewå¯¹è±¡ä¿ç•™åœ¨ç»ˆæ­¢çš„ä½ç½®ã€‚
 		mTranslateAnimation.setDuration(300L);
 		return mTranslateAnimation;
 	}
 	
-	/** ÒÆ¶¯µÄÊ±ºò´¥·¢*/
+	/** ç§»åŠ¨çš„æ—¶å€™è§¦å‘*/
 	public void OnMove(int x, int y) {
-		// ÍÏ¶¯µÄVIEWÏÂ·½µÄPOSTION
+		// æ‹–åŠ¨çš„VIEWä¸‹æ–¹çš„POSTION
 		int dPosition = pointToPosition(x, y);
-		// ÅĞ¶ÏÏÂ·½µÄPOSTIONÊÇ·ñÊÇ×î¿ªÊ¼2¸ö²»ÄÜÍÏ¶¯µÄ
+		// åˆ¤æ–­ä¸‹æ–¹çš„POSTIONæ˜¯å¦æ˜¯æœ€å¼€å§‹2ä¸ªä¸èƒ½æ‹–åŠ¨çš„
 		if (dPosition > 1) {
 	        if ((dPosition == -1) || (dPosition == dragPosition)){
 	        	return;
@@ -312,12 +312,12 @@ public class DragGrid extends GridView {
 		    	dragPosition = startPosition;
 		    }
 			int movecount;
-			//ÍÏ¶¯µÄ=¿ªÊ¼ÍÏµÄ£¬²¢ÇÒ ÍÏ¶¯µÄ ²»µÈÓÚ·ÅÏÂµÄ
+			//æ‹–åŠ¨çš„=å¼€å§‹æ‹–çš„ï¼Œå¹¶ä¸” æ‹–åŠ¨çš„ ä¸ç­‰äºæ”¾ä¸‹çš„
 		    if ((dragPosition == startPosition) || (dragPosition != dropPosition)){
-		    	//ÒÆĞèÒªÒÆ¶¯µÄ¶¯ITEMÊıÁ¿
+		    	//ç§»éœ€è¦ç§»åŠ¨çš„åŠ¨ITEMæ•°é‡
 		    	movecount = dropPosition - dragPosition;
 		    }else{
-		    	//ÒÆĞèÒªÒÆ¶¯µÄ¶¯ITEMÊıÁ¿Îª0
+		    	//ç§»éœ€è¦ç§»åŠ¨çš„åŠ¨ITEMæ•°é‡ä¸º0
 		    	movecount = 0;
 		    }
 		    if(movecount == 0){
@@ -327,23 +327,23 @@ public class DragGrid extends GridView {
 		    int movecount_abs = Math.abs(movecount);
 		    
 			if (dPosition != dragPosition) {
-				//dragGroupÉèÖÃÎª²»¿É¼û
+				//dragGroupè®¾ç½®ä¸ºä¸å¯è§
 				ViewGroup dragGroup = (ViewGroup) getChildAt(dragPosition);
 				dragGroup.setVisibility(View.INVISIBLE);
 				
-				float to_x = 1;// µ±Ç°ÏÂ·½positon
-				float to_y;// µ±Ç°ÏÂ·½ÓÒ±ßpositon
-				//x_vlaueÒÆ¶¯µÄ¾àÀë°Ù·Ö±È£¨Ïà¶ÔÓÚ×Ô¼º³¤¶ÈµÄ°Ù·Ö±È£©
+				float to_x = 1;// å½“å‰ä¸‹æ–¹positon
+				float to_y;// å½“å‰ä¸‹æ–¹å³è¾¹positon
+				//x_vlaueç§»åŠ¨çš„è·ç¦»ç™¾åˆ†æ¯”ï¼ˆç›¸å¯¹äºè‡ªå·±é•¿åº¦çš„ç™¾åˆ†æ¯”ï¼‰
 				float x_vlaue = ((float) mHorizontalSpacing / (float) itemWidth) + 1.0f;
-				//y_vlaueÒÆ¶¯µÄ¾àÀë°Ù·Ö±È£¨Ïà¶ÔÓÚ×Ô¼º¿í¶ÈµÄ°Ù·Ö±È£©
+				//y_vlaueç§»åŠ¨çš„è·ç¦»ç™¾åˆ†æ¯”ï¼ˆç›¸å¯¹äºè‡ªå·±å®½åº¦çš„ç™¾åˆ†æ¯”ï¼‰
 				float y_vlaue = ((float) mVerticalSpacing / (float) itemHeight) + 1.0f;
 				Log.d("x_vlaue", "x_vlaue = " + x_vlaue);
 				for (int i = 0; i < movecount_abs; i++) {
 					 to_x = x_vlaue;
 					 to_y = y_vlaue;
-					//Ïñ×ó
+					//åƒå·¦
 					if (movecount > 0) {
-						// ÅĞ¶ÏÊÇ²»ÊÇÍ¬Ò»ĞĞµÄ
+						// åˆ¤æ–­æ˜¯ä¸æ˜¯åŒä¸€è¡Œçš„
 						holdPosition = dragPosition + i + 1;
 						if (dragPosition / nColumns == holdPosition / nColumns) {
 							to_x = - x_vlaue;
@@ -356,7 +356,7 @@ public class DragGrid extends GridView {
 							to_y = 0;
 						}
 					}else{
-						//ÏòÓÒ,ÏÂÒÆµ½ÉÏ£¬ÓÒÒÆµ½×ó
+						//å‘å³,ä¸‹ç§»åˆ°ä¸Šï¼Œå³ç§»åˆ°å·¦
 						holdPosition = dragPosition - i - 1;
 						if (dragPosition / nColumns == holdPosition / nColumns) {
 							to_x = x_vlaue;
@@ -372,7 +372,7 @@ public class DragGrid extends GridView {
 					ViewGroup moveViewGroup = (ViewGroup) getChildAt(holdPosition);
 					Animation moveAnimation = getMoveAnimation(to_x, to_y);
 					moveViewGroup.startAnimation(moveAnimation);
-					//Èç¹ûÊÇ×îºóÒ»¸öÒÆ¶¯µÄ£¬ÄÇÃ´ÉèÖÃËûµÄ×îºó¸ö¶¯»­IDÎªLastAnimationID
+					//å¦‚æœæ˜¯æœ€åä¸€ä¸ªç§»åŠ¨çš„ï¼Œé‚£ä¹ˆè®¾ç½®ä»–çš„æœ€åä¸ªåŠ¨ç”»IDä¸ºLastAnimationID
 					if (holdPosition == dropPosition) {
 						LastAnimationID = moveAnimation.toString();
 					}
@@ -393,7 +393,7 @@ public class DragGrid extends GridView {
 						@Override
 						public void onAnimationEnd(Animation animation) {
 							// TODO Auto-generated method stub
-							// Èç¹ûÎª×îºó¸ö¶¯»­½áÊø£¬ÄÇÖ´ĞĞÏÂÃæµÄ·½·¨
+							// å¦‚æœä¸ºæœ€åä¸ªåŠ¨ç”»ç»“æŸï¼Œé‚£æ‰§è¡Œä¸‹é¢çš„æ–¹æ³•
 							if (animation.toString().equalsIgnoreCase(LastAnimationID)) {
 								DragAdapter mDragAdapter = (DragAdapter) getAdapter();
 								mDragAdapter.exchange(startPosition,dropPosition);

@@ -7,11 +7,11 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 /** 
- * 头部有新咨询的Toast提示
+ * 澶撮儴鏈夋柊鍜ㄨ鐨凾oast鎻愮ず
  * */
 public class TopToastView {
 	/** 
-	 * 初始化Toast提示，并show
+	 * 鍒濆鍖朤oast鎻愮ず锛屽苟show
 	 * */
 	public static void initToast(Context context,String top_hint,int img_res){
 		Toast topToast = Toast.makeText(context, top_hint, Toast.LENGTH_LONG);

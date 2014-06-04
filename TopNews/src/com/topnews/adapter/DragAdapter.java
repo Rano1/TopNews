@@ -16,22 +16,22 @@ import android.widget.TextView;
 public class DragAdapter extends BaseAdapter {
 	/** TAG*/
 	private final static String TAG = "DragAdapter";
-	/** 是否显示底部的ITEM */
+	/** 鏄惁鏄剧ず搴曢儴鐨処TEM */
 	private boolean isItemShow = false;
 	private Context context;
-	/** 控制的postion */
+	/** 鎺у埗鐨刾ostion */
 	private int holdPosition;
-	/** 是否改变 */
+	/** 鏄惁鏀瑰彉 */
 	private boolean isChanged = false;
-	/** 列表数据是否改变 */
+	/** 鍒楄〃鏁版嵁鏄惁鏀瑰彉 */
 	private boolean isListChanged = false;
-	/** 是否可见 */
+	/** 鏄惁鍙 */
 	boolean isVisible = true;
-	/** 可以拖动的列表（即用户选择的频道列表） */
+	/** 鍙互鎷栧姩鐨勫垪琛紙鍗崇敤鎴烽�夋嫨鐨勯閬撳垪琛級 */
 	public List<ChannelItem> channelList;
-	/** TextView 频道内容 */
+	/** TextView 棰戦亾鍐呭 */
 	private TextView item_text;
-	/** 要删除的position */
+	/** 瑕佸垹闄ょ殑position */
 	public int remove_position = -1;
 
 	public DragAdapter(Context context, List<ChannelItem> channelList) {
@@ -87,14 +87,14 @@ public class DragAdapter extends BaseAdapter {
 		return view;
 	}
 
-	/** 添加频道列表 */
+	/** 娣诲姞棰戦亾鍒楄〃 */
 	public void addItem(ChannelItem channel) {
 		channelList.add(channel);
 		isListChanged = true;
 		notifyDataSetChanged();
 	}
 
-	/** 拖动变更频道排序 */
+	/** 鎷栧姩鍙樻洿棰戦亾鎺掑簭 */
 	public void exchange(int dragPostion, int dropPostion) {
 		holdPosition = dropPostion;
 		ChannelItem dragItem = getItem(dragPostion);
@@ -111,18 +111,18 @@ public class DragAdapter extends BaseAdapter {
 		notifyDataSetChanged();
 	}
 	
-	/** 获取频道列表 */
+	/** 鑾峰彇棰戦亾鍒楄〃 */
 	public List<ChannelItem> getChannnelLst() {
 		return channelList;
 	}
 
-	/** 设置删除的position */
+	/** 璁剧疆鍒犻櫎鐨刾osition */
 	public void setRemove(int position) {
 		remove_position = position;
 		notifyDataSetChanged();
 	}
 
-	/** 删除频道列表 */
+	/** 鍒犻櫎棰戦亾鍒楄〃 */
 	public void remove() {
 		channelList.remove(remove_position);
 		remove_position = -1;
@@ -130,26 +130,26 @@ public class DragAdapter extends BaseAdapter {
 		notifyDataSetChanged();
 	}
 	
-	/** 设置频道列表 */
+	/** 璁剧疆棰戦亾鍒楄〃 */
 	public void setListDate(List<ChannelItem> list) {
 		channelList = list;
 	}
 	
-	/** 获取是否可见 */
+	/** 鑾峰彇鏄惁鍙 */
 	public boolean isVisible() {
 		return isVisible;
 	}
 	
-	/** 排序是否发生改变 */
+	/** 鎺掑簭鏄惁鍙戠敓鏀瑰彉 */
 	public boolean isListChanged() {
 		return isListChanged;
 	}
 	
-	/** 设置是否可见 */
+	/** 璁剧疆鏄惁鍙 */
 	public void setVisible(boolean visible) {
 		isVisible = visible;
 	}
-	/** 显示放下的ITEM */
+	/** 鏄剧ず鏀句笅鐨処TEM */
 	public void setShowDropItem(boolean show) {
 		isItemShow = show;
 	}

@@ -9,7 +9,7 @@ import com.topnews.bean.NewsEntity;
 
 public class Constants {
 	/*
-	 * »ñÈ¡ĞÂÎÅÁĞ±í
+	 * è·å–æ–°é—»åˆ—è¡¨
 	 */
 	public static ArrayList<NewsEntity> getNewsList() {
 		ArrayList<NewsEntity> newsList = new ArrayList<NewsEntity>();
@@ -22,10 +22,10 @@ public class Constants {
 			news.setInterestedStatus(true);
 			news.setLikeStatus(true);
 			news.setReadStatus(false);
-			news.setNewsCategory("ÍÆ¼ö");
+			news.setNewsCategory("æ¨è");
 			news.setNewsCategoryId(1);
 			news.setSource_url("http://news.sina.com.cn/c/2014-05-05/134230063386.shtml");
-			news.setTitle("¿ÉÒÔÓÃ¹È¸èÑÛ¾µ×öµÄ10¼ş¿áÊÂ£ºµ¼º½¡¢ÍæÓÎÏ·");
+			news.setTitle("å¯ä»¥ç”¨è°·æ­Œçœ¼é•œåšçš„10ä»¶é…·äº‹ï¼šå¯¼èˆªã€ç©æ¸¸æˆ");
 			List<String> url_list = new ArrayList<String>();
 			if(i%2 == 1){
 				String url1 = "http://infopic.gtimg.com/qq_news/digi/pics/102/102066/102066094_400_640.jpg";
@@ -39,7 +39,7 @@ public class Constants {
 				url_list.add(url2);
 				url_list.add(url3);
 			}else{
-				news.setTitle("AAÓÃ³µ:ÖÇÄÜ¶Ì×â×â³µÆ½Ì¨");
+				news.setTitle("AAç”¨è½¦:æ™ºèƒ½çŸ­ç§Ÿç§Ÿè½¦å¹³å°");
 				String url = "http://r3.sinaimg.cn/2/2014/0417/a7/6/92478595/580x1000x75x0.jpg";
 				news.setPicOne(url);
 				url_list.add(url);
@@ -47,12 +47,12 @@ public class Constants {
 			news.setPicList(url_list);
 			news.setPublishTime(Long.valueOf(i));
 			news.setReadStatus(false);
-			news.setSource("ÊÖ»úÌÚÑ¶Íø");
-			news.setSummary("ÌÚÑ¶ÊıÂëÑ¶£¨±àÒë£ºGin£©¹È¸èÑÛ¾µ¿ÉÄÜÊÇÄ¿Ç°×î¿áµÄ¿É´©´÷ÊıÂëÉè±¸£¬Äã¿ÉÒÔ´÷×ÅËüÈ¥ÈÎºÎµØ·½£¨Ö»Òª·¨ÂÉ·¨¹æÔÊĞí»òÊÇÃ»ÓĞÒıÆğÖÚÅ­£©£¬×÷ÎªÊÖ»úµÄµÚ¶ş¿é¡°ÔöÇ¿ÏÖÊµÏÔÊ¾ÆÁ¡±À´Ê¹ÓÃ¡£ÁíÍâ£¬ËäÈ»ËüÈÔÎ´ÕıÊ½ÏúÊÛ£¬µ«¹È¸è½üÈÕÔÚÃÀ¹úÊĞ³¡¾ÙĞĞÁË½öÏŞÒ»ÌìµÄ¿ª·Å¹ºÂò»î¶¯£¬¼Û¸ñÔòÎª1500ÃÀÔª£¨Ô¼ºÏÈËÃñ±Ò9330Ôª£©£¬ËäÈ»ÈÔÊ®·Ö°º¹ó£¬µ«ÖÁÉÙ¿ÉÒÔÂú×ãÒ»Ğ©³¢ÏÊÕßµÄĞèÇó£¬Ò²Ô¤Ê¾×Å¹È¸èÑÛ¾µµÄ¹«¿ª´ó¹æÄ£ÏúÊÛÀëÎÒÃÇÔ½À´Ô½½üÁË¡£");
+			news.setSource("æ‰‹æœºè…¾è®¯ç½‘");
+			news.setSummary("è…¾è®¯æ•°ç è®¯ï¼ˆç¼–è¯‘ï¼šGinï¼‰è°·æ­Œçœ¼é•œå¯èƒ½æ˜¯ç›®å‰æœ€é…·çš„å¯ç©¿æˆ´æ•°ç è®¾å¤‡ï¼Œä½ å¯ä»¥æˆ´ç€å®ƒå»ä»»ä½•åœ°æ–¹ï¼ˆåªè¦æ³•å¾‹æ³•è§„å…è®¸æˆ–æ˜¯æ²¡æœ‰å¼•èµ·ä¼—æ€’ï¼‰ï¼Œä½œä¸ºæ‰‹æœºçš„ç¬¬äºŒå—â€œå¢å¼ºç°å®æ˜¾ç¤ºå±â€æ¥ä½¿ç”¨ã€‚å¦å¤–ï¼Œè™½ç„¶å®ƒä»æœªæ­£å¼é”€å”®ï¼Œä½†è°·æ­Œè¿‘æ—¥åœ¨ç¾å›½å¸‚åœºä¸¾è¡Œäº†ä»…é™ä¸€å¤©çš„å¼€æ”¾è´­ä¹°æ´»åŠ¨ï¼Œä»·æ ¼åˆ™ä¸º1500ç¾å…ƒï¼ˆçº¦åˆäººæ°‘å¸9330å…ƒï¼‰ï¼Œè™½ç„¶ä»ååˆ†æ˜‚è´µï¼Œä½†è‡³å°‘å¯ä»¥æ»¡è¶³ä¸€äº›å°é²œè€…çš„éœ€æ±‚ï¼Œä¹Ÿé¢„ç¤ºç€è°·æ­Œçœ¼é•œçš„å…¬å¼€å¤§è§„æ¨¡é”€å”®ç¦»æˆ‘ä»¬è¶Šæ¥è¶Šè¿‘äº†ã€‚");
 			news.setMark(i);
 			if(i == 4){
-				news.setTitle("²¿ÂäÕ½ÕùÇ¿ÊÆ»Ø¹é");
-				news.setLocal("ÍÆ¹ã");
+				news.setTitle("éƒ¨è½æˆ˜äº‰å¼ºåŠ¿å›å½’");
+				news.setLocal("æ¨å¹¿");
 				news.setIsLarge(true);
 				String url = "http://imgt2.bdstatic.com/it/u=3269155243,2604389213&fm=21&gp=0.jpg";
 				news.setSource_url("http://games.sina.com.cn/zl/duanpian/2014-05-21/141297.shtml");
@@ -63,7 +63,7 @@ public class Constants {
 				news.setIsLarge(false);
 			}
 			if(i == 2){
-				news.setComment("ÆÀÂÛ²¿·Ö£¬ËµµÄ·Ç³£ºÃ¡£");
+				news.setComment("è¯„è®ºéƒ¨åˆ†ï¼Œè¯´çš„éå¸¸å¥½ã€‚");
 			}
 			
 			if(i <= 2){
@@ -78,35 +78,35 @@ public class Constants {
 		return newsList;
 	}
 	
-	/** mark=0 £ºÍÆ¼ö */
+	/** mark=0 ï¼šæ¨è */
 	public final static int mark_recom = 0;
-	/** mark=1 £ºÈÈÃÅ */
+	/** mark=1 ï¼šçƒ­é—¨ */
 	public final static int mark_hot = 1;
-	/** mark=2 £ºÊ×·¢ */
+	/** mark=2 ï¼šé¦–å‘ */
 	public final static int mark_frist = 2;
-	/** mark=3 £º¶À¼Ò */
+	/** mark=3 ï¼šç‹¬å®¶ */
 	public final static int mark_exclusive = 3;
-	/** mark=4 £ºÊÕ²Ø */
+	/** mark=4 ï¼šæ”¶è— */
 	public final static int mark_favor = 4;
 	
 	/*
-	 * »ñÈ¡³ÇÊĞÁĞ±í
+	 * è·å–åŸå¸‚åˆ—è¡¨
 	 */
 	public static ArrayList<CityEntity> getCityList(){
 		ArrayList<CityEntity> cityList =new ArrayList<CityEntity>();
-		CityEntity city1 = new CityEntity(1, "°²¼ª", 'A');
-		CityEntity city2 = new CityEntity(2, "±±¾©", 'B');
-		CityEntity city3 = new CityEntity(3, "³¤´º", 'C');
-		CityEntity city4 = new CityEntity(4, "³¤É³", 'C');
-		CityEntity city5 = new CityEntity(5, "´óÁ¬", 'D');
-		CityEntity city6 = new CityEntity(6, "¹ş¶û±õ", 'H');
-		CityEntity city7 = new CityEntity(7, "º¼Öİ", 'H');
-		CityEntity city8 = new CityEntity(8, "½ğÉ³½­", 'J');
-		CityEntity city9 = new CityEntity(9, "½­ÃÅ", 'J');
-		CityEntity city10 = new CityEntity(10, "É½¶«", 'S');
-		CityEntity city11 = new CityEntity(11, "ÈıÑÇ", 'S');
-		CityEntity city12 = new CityEntity(12, "ÒåÎÚ", 'Y');
-		CityEntity city13 = new CityEntity(13, "ÖÛÉ½", 'Z');
+		CityEntity city1 = new CityEntity(1, "å®‰å‰", 'A');
+		CityEntity city2 = new CityEntity(2, "åŒ—äº¬", 'B');
+		CityEntity city3 = new CityEntity(3, "é•¿æ˜¥", 'C');
+		CityEntity city4 = new CityEntity(4, "é•¿æ²™", 'C');
+		CityEntity city5 = new CityEntity(5, "å¤§è¿", 'D');
+		CityEntity city6 = new CityEntity(6, "å“ˆå°”æ»¨", 'H');
+		CityEntity city7 = new CityEntity(7, "æ­å·", 'H');
+		CityEntity city8 = new CityEntity(8, "é‡‘æ²™æ±Ÿ", 'J');
+		CityEntity city9 = new CityEntity(9, "æ±Ÿé—¨", 'J');
+		CityEntity city10 = new CityEntity(10, "å±±ä¸œ", 'S');
+		CityEntity city11 = new CityEntity(11, "ä¸‰äºš", 'S');
+		CityEntity city12 = new CityEntity(12, "ä¹‰ä¹Œ", 'Y');
+		CityEntity city13 = new CityEntity(13, "èˆŸå±±", 'Z');
 		cityList.add(city1);
 		cityList.add(city2);
 		cityList.add(city3);
@@ -122,6 +122,6 @@ public class Constants {
 		cityList.add(city13);
 		return cityList;
 	}
-	/* ÆµµÀÖĞÇøÓò Èçº¼Öİ ¶ÔÓ¦µÄÀ¸Ä¿ID */
+	/* é¢‘é“ä¸­åŒºåŸŸ å¦‚æ­å· å¯¹åº”çš„æ ç›®ID */
 	public final static int CHANNEL_CITY = 3;
 }

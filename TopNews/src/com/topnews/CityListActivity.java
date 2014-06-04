@@ -37,7 +37,7 @@ public class CityListActivity extends BaseActivity {
 	}
 	
 	private void initData() {
-		title.setText("当前城市-杭州");
+		title.setText("褰撳墠鍩庡競-鏉窞");
 		cityList = Constants.getCityList();
 		mAdapter = new CityAdapter(this, cityList);
 		mListView.setAdapter(mAdapter);

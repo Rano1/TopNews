@@ -14,15 +14,15 @@ import com.topnews.base.BaseActivity;
 import com.topnews.view.imageshow.ImageShowViewPager;
 
 /*
- * ͼƬչʾ
+ * 图片展示
  */
 public class ImageShowActivity extends BaseActivity {
-	/** ͼƬչʾ */
+	/** 图片展示 */
 	private ImageShowViewPager image_pager;
 	private TextView page_number;
-	/** ͼƬ���ذ�ť */
+	/** 图片下载按钮 */
 	private ImageView download;
-	/** ͼƬ�б� */
+	/** 图片列表 */
 	private ArrayList<String> imgsUrl;
 	/** PagerAdapter */
 	private ImagePagerAdapter mAdapter;

@@ -32,56 +32,56 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 /**
- * £¨android¸ß·ÂÏµÁĞ£©½ñÈÕÍ·Ìõ --ĞÂÎÅÔÄ¶ÁÆ÷  
+ * ï¼ˆandroidé«˜ä»¿ç³»åˆ—ï¼‰ä»Šæ—¥å¤´æ¡ --æ–°é—»é˜…è¯»å™¨  
  * author:RA
  * blog : http://blog.csdn.net/vipzjyno1/
  */
 public class MainActivity extends FragmentActivity {
-	/** ×Ô¶¨ÒåHorizontalScrollView */
+	/** è‡ªå®šä¹‰HorizontalScrollView */
 	private ColumnHorizontalScrollView mColumnHorizontalScrollView;
 	LinearLayout mRadioGroup_content;
 	LinearLayout ll_more_columns;
 	RelativeLayout rl_column;
 	private ViewPager mViewPager;
 	private ImageView button_more_columns;
-	/** ÓÃ»§Ñ¡ÔñµÄĞÂÎÅ·ÖÀàÁĞ±í*/
+	/** ç”¨æˆ·é€‰æ‹©çš„æ–°é—»åˆ†ç±»åˆ—è¡¨*/
 	private ArrayList<ChannelItem> userChannelList=new ArrayList<ChannelItem>();
-	/** µ±Ç°Ñ¡ÖĞµÄÀ¸Ä¿*/
+	/** å½“å‰é€‰ä¸­çš„æ ç›®*/
 	private int columnSelectIndex = 0;
-	/** ×óÒõÓ°²¿·Ö*/
+	/** å·¦é˜´å½±éƒ¨åˆ†*/
 	public ImageView shade_left;
-	/** ÓÒÒõÓ°²¿·Ö */
+	/** å³é˜´å½±éƒ¨åˆ† */
 	public ImageView shade_right;
-	/** ÆÁÄ»¿í¶È */
+	/** å±å¹•å®½åº¦ */
 	private int mScreenWidth = 0;
-	/** Item¿í¶È */
+	/** Itemå®½åº¦ */
 	private int mItemWidth = 0;
 	private ArrayList<Fragment> fragments = new ArrayList<Fragment>();
 	
 	protected SlidingMenu side_drawer;
 	
-	/** head Í·²¿ µÄÖĞ¼äµÄloading*/
+	/** head å¤´éƒ¨ çš„ä¸­é—´çš„loading*/
 	private ProgressBar top_progress;
-	/** head Í·²¿ ÖĞ¼äµÄË¢ĞÂ°´Å¥*/
+	/** head å¤´éƒ¨ ä¸­é—´çš„åˆ·æ–°æŒ‰é’®*/
 	private ImageView top_refresh;
-	/** head Í·²¿ µÄ×ó²à²Ëµ¥ °´Å¥*/
+	/** head å¤´éƒ¨ çš„å·¦ä¾§èœå• æŒ‰é’®*/
 	private ImageView top_head;
-	/** head Í·²¿ µÄÓÒ²à²Ëµ¥ °´Å¥*/
+	/** head å¤´éƒ¨ çš„å³ä¾§èœå• æŒ‰é’®*/
 	private ImageView top_more;
-	/** ÇëÇóCODE */
+	/** è¯·æ±‚CODE */
 	public final static int CHANNELREQUEST = 1;
-	/** µ÷Õû·µ»ØµÄRESULTCODE */
+	/** è°ƒæ•´è¿”å›çš„RESULTCODE */
 	public final static int CHANNELRESULT = 10;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
 		mScreenWidth = BaseTools.getWindowsWidth(this);
-		mItemWidth = mScreenWidth / 7;// Ò»¸öItem¿í¶ÈÎªÆÁÄ»µÄ1/7
+		mItemWidth = mScreenWidth / 7;// ä¸€ä¸ªItemå®½åº¦ä¸ºå±å¹•çš„1/7
 		initView();
 		initSlidingMenu();
 	}
-	/** ³õÊ¼»¯layout¿Ø¼ş*/
+	/** åˆå§‹åŒ–layoutæ§ä»¶*/
 	private void initView() {
 		mColumnHorizontalScrollView =  (ColumnHorizontalScrollView)findViewById(R.id.mColumnHorizontalScrollView);
 		mRadioGroup_content = (LinearLayout) findViewById(R.id.mRadioGroup_content);
@@ -131,20 +131,20 @@ public class MainActivity extends FragmentActivity {
 		setChangelView();
 	}
 	/** 
-	 *  µ±À¸Ä¿Ïî·¢Éú±ä»¯Ê±ºòµ÷ÓÃ
+	 *  å½“æ ç›®é¡¹å‘ç”Ÿå˜åŒ–æ—¶å€™è°ƒç”¨
 	 * */
 	private void setChangelView() {
 		initColumnData();
 		initTabColumn();
 		initFragment();
 	}
-	/** »ñÈ¡ColumnÀ¸Ä¿ Êı¾İ*/
+	/** è·å–Columnæ ç›® æ•°æ®*/
 	private void initColumnData() {
 		userChannelList = ((ArrayList<ChannelItem>)ChannelManage.getManage(AppApplication.getApp().getSQLHelper()).getUserChannel());
 	}
 
 	/** 
-	 *  ³õÊ¼»¯ColumnÀ¸Ä¿Ïî
+	 *  åˆå§‹åŒ–Columnæ ç›®é¡¹
 	 * */
 	private void initTabColumn() {
 		mRadioGroup_content.removeAllViews();
@@ -187,7 +187,7 @@ public class MainActivity extends FragmentActivity {
 		}
 	}
 	/** 
-	 *  Ñ¡ÔñµÄColumnÀïÃæµÄTab
+	 *  é€‰æ‹©çš„Columné‡Œé¢çš„Tab
 	 * */
 	private void selectTab(int tab_postion) {
 		columnSelectIndex = tab_postion;
@@ -201,7 +201,7 @@ public class MainActivity extends FragmentActivity {
 			// mColumnHorizontalScrollView.smoothScrollTo((position - 2) *
 			// mItemWidth , 0);
 		}
-		//ÅĞ¶ÏÊÇ·ñÑ¡ÖĞ
+		//åˆ¤æ–­æ˜¯å¦é€‰ä¸­
 		for (int j = 0; j <  mRadioGroup_content.getChildCount(); j++) {
 			View checkView = mRadioGroup_content.getChildAt(j);
 			boolean ischeck;
@@ -214,10 +214,10 @@ public class MainActivity extends FragmentActivity {
 		}
 	}
 	/** 
-	 *  ³õÊ¼»¯Fragment
+	 *  åˆå§‹åŒ–Fragment
 	 * */
 	private void initFragment() {
-		fragments.clear();//Çå¿Õ
+		fragments.clear();//æ¸…ç©º
 		int count =  userChannelList.size();
 		for(int i = 0; i< count;i++){
 			Bundle data = new Bundle();
@@ -233,7 +233,7 @@ public class MainActivity extends FragmentActivity {
 		mViewPager.setOnPageChangeListener(pageListener);
 	}
 	/** 
-	 *  ViewPagerÇĞ»»¼àÌı·½·¨
+	 *  ViewPageråˆ‡æ¢ç›‘å¬æ–¹æ³•
 	 * */
 	public OnPageChangeListener pageListener= new OnPageChangeListener(){
 
@@ -272,7 +272,7 @@ public class MainActivity extends FragmentActivity {
 				side_drawer.showContent();
 			}else {
 				if ((System.currentTimeMillis() - mExitTime) > 2000) {
-					Toast.makeText(this, "ÔÚ°´Ò»´ÎÍË³ö",
+					Toast.makeText(this, "åœ¨æŒ‰ä¸€æ¬¡é€€å‡º",
 							Toast.LENGTH_SHORT).show();
 					mExitTime = System.currentTimeMillis();
 				} else {
@@ -281,7 +281,7 @@ public class MainActivity extends FragmentActivity {
 			}
 			return true;
 		}
-		//À¹½ØMENU°´Å¥µã»÷ÊÂ¼ş£¬ÈÃËûÎŞÈÎºÎ²Ù×÷
+		//æ‹¦æˆªMENUæŒ‰é’®ç‚¹å‡»äº‹ä»¶ï¼Œè®©ä»–æ— ä»»ä½•æ“ä½œ
 		if (keyCode == KeyEvent.KEYCODE_MENU) {
 			return true;
 		}

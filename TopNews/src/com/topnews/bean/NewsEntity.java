@@ -4,53 +4,53 @@ import java.io.Serializable;
 import java.util.List;
 
 public class NewsEntity implements Serializable {
-	/** ĞÂÎÅÀà±ğ ID */
+	/** æ–°é—»ç±»åˆ« ID */
 	private Integer newsCategoryId;
-	/** ĞÂÎÅÀàĞÍ */
+	/** æ–°é—»ç±»å‹ */
 	private String newsCategory;
-	/** ±ê¼Ç×´Ì¬£¬ÈçÍÆ¼öÖ®ÀàµÄ */
+	/** æ ‡è®°çŠ¶æ€ï¼Œå¦‚æ¨èä¹‹ç±»çš„ */
 	private Integer mark;;
-	/** ÆÀÂÛÊıÁ¿ */
+	/** è¯„è®ºæ•°é‡ */
 	private Integer commentNum;
 	/** ID */
 	private Integer id;
-	/** ĞÂÎÅID */
+	/** æ–°é—»ID */
 	private Integer newsId;
-	/** ±êÌâ */
+	/** æ ‡é¢˜ */
 	private String title;
-	/** ĞÂÎÅÔ´ */
+	/** æ–°é—»æº */
 	private String source;
-	/** ĞÂÎÅÔ´µØÖ· URL */
+	/** æ–°é—»æºåœ°å€ URL */
 	private String source_url;
-	/** ·¢²¼Ê±¼ä */
+	/** å‘å¸ƒæ—¶é—´ */
 	private Long publishTime;
-	/** ×Ü½á */
+	/** æ€»ç»“ */
 	private String summary;
-	/** ÕªÒª */
+	/** æ‘˜è¦ */
 	private String newsAbstract;
-	/** ÆÀÂÛ */
+	/** è¯„è®º */
 	private String comment;
-	/** ÌØÊâ±êÇ©£¬Èç¹ã¸æÍÆ¹ãÖ®ÀàµÄ £¬¿ÉÒÔÎª¿Õ */
+	/** ç‰¹æ®Šæ ‡ç­¾ï¼Œå¦‚å¹¿å‘Šæ¨å¹¿ä¹‹ç±»çš„ ï¼Œå¯ä»¥ä¸ºç©º */
 	private String local;
-	/** Í¼Æ¬ÁĞ±í×Ö·û´® */
+	/** å›¾ç‰‡åˆ—è¡¨å­—ç¬¦ä¸² */
 	private String picListString;
-	/** Í¼Æ¬1 URL */
+	/** å›¾ç‰‡1 URL */
 	private String picOne;
-	/** Í¼Æ¬2 URL */
+	/** å›¾ç‰‡2 URL */
 	private String picTwo;
-	/** Í¼Æ¬3 URL */
+	/** å›¾ç‰‡3 URL */
 	private String picThr;
-	/** Í¼Æ¬ ÁĞ±í */
+	/** å›¾ç‰‡ åˆ—è¡¨ */
 	private List<String> picList;
-	/** Í¼Æ¬ÀàĞÍÊÇ·ñÎª´óÍ¼ */
+	/** å›¾ç‰‡ç±»å‹æ˜¯å¦ä¸ºå¤§å›¾ */
 	private Boolean isLarge;
-	/** ÔÄ¶Á×´Ì¬ £¬¶Á¹ıµÄ»°ÏÔÊ¾»ÒÉ«±³¾° */
+	/** é˜…è¯»çŠ¶æ€ ï¼Œè¯»è¿‡çš„è¯æ˜¾ç¤ºç°è‰²èƒŒæ™¯ */
 	private Boolean readStatus;
-	/** ÊÕ²Ø×´Ì¬ */
+	/** æ”¶è—çŠ¶æ€ */
 	private Boolean collectStatus;
-	/** Ï²»¶ ×´Ì¬ */
+	/** å–œæ¬¢ çŠ¶æ€ */
 	private Boolean likeStatus;
-	/** ¸ĞĞËÈ¤×´Ì¬ */
+	/** æ„Ÿå…´è¶£çŠ¶æ€ */
 	private Boolean interestedStatus;
 
 	public Integer getNewsCategoryId() {

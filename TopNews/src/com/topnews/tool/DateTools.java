@@ -8,11 +8,11 @@ import java.util.Date;
 import android.text.TextUtils;
 import android.util.Log;
 /*
- * Ê±¼ä¹¤¾ßÀà
+ * æ—¶é—´å·¥å…·ç±»
  */
 public class DateTools {
 	/*
-	 * ½«Ê±¼ä´Á×ªÎª×Ö·û´® £¬¸ñÊ½£ºyyyy-MM-dd HH:mm
+	 * å°†æ—¶é—´æˆ³è½¬ä¸ºå­—ç¬¦ä¸² ï¼Œæ ¼å¼ï¼šyyyy-MM-dd HH:mm
 	 */
 	public static String getStrTime_ymd_hm(String cc_time) {
 		String re_StrTime = "";
@@ -20,7 +20,7 @@ public class DateTools {
 			return re_StrTime;
 		}
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
-		// ÀıÈç£ºcc_time=1291778220
+		// ä¾‹å¦‚ï¼šcc_time=1291778220
 		long lcc_time = Long.valueOf(cc_time);
 		re_StrTime = sdf.format(new Date(lcc_time * 1000L));
 		return re_StrTime;
@@ -28,12 +28,12 @@ public class DateTools {
 	}
 
 	/*
-	 * ½«Ê±¼ä´Á×ªÎª×Ö·û´® £¬¸ñÊ½£ºyyyy-MM-dd HH:mm:ss
+	 * å°†æ—¶é—´æˆ³è½¬ä¸ºå­—ç¬¦ä¸² ï¼Œæ ¼å¼ï¼šyyyy-MM-dd HH:mm:ss
 	 */
 	public static String getStrTime_ymd_hms(String cc_time) {
 		String re_StrTime = null;
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-		// ÀıÈç£ºcc_time=1291778220
+		// ä¾‹å¦‚ï¼šcc_time=1291778220
 		long lcc_time = Long.valueOf(cc_time);
 		re_StrTime = sdf.format(new Date(lcc_time * 1000L));
 		return re_StrTime;
@@ -41,79 +41,79 @@ public class DateTools {
 	}
 
 	/*
-	 * ½«Ê±¼ä´Á×ªÎª×Ö·û´® £¬¸ñÊ½£ºyyyy.MM.dd
+	 * å°†æ—¶é—´æˆ³è½¬ä¸ºå­—ç¬¦ä¸² ï¼Œæ ¼å¼ï¼šyyyy.MM.dd
 	 */
 	public static String getStrTime_ymd(String cc_time) {
 		String re_StrTime = null;
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd");
-		// ÀıÈç£ºcc_time=1291778220
+		// ä¾‹å¦‚ï¼šcc_time=1291778220
 		long lcc_time = Long.valueOf(cc_time);
 		re_StrTime = sdf.format(new Date(lcc_time * 1000L));
 		return re_StrTime;
 	}
 
 	/*
-	 * ½«Ê±¼ä´Á×ªÎª×Ö·û´® £¬¸ñÊ½£ºyyyy
+	 * å°†æ—¶é—´æˆ³è½¬ä¸ºå­—ç¬¦ä¸² ï¼Œæ ¼å¼ï¼šyyyy
 	 */
 	public static String getStrTime_y(String cc_time) {
 		String re_StrTime = null;
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy");
-		// ÀıÈç£ºcc_time=1291778220
+		// ä¾‹å¦‚ï¼šcc_time=1291778220
 		long lcc_time = Long.valueOf(cc_time);
 		re_StrTime = sdf.format(new Date(lcc_time * 1000L));
 		return re_StrTime;
 	}
 
 	/*
-	 * ½«Ê±¼ä´Á×ªÎª×Ö·û´® £¬¸ñÊ½£ºMM-dd
+	 * å°†æ—¶é—´æˆ³è½¬ä¸ºå­—ç¬¦ä¸² ï¼Œæ ¼å¼ï¼šMM-dd
 	 */
 	public static String getStrTime_md(String cc_time) {
 		String re_StrTime = null;
 		SimpleDateFormat sdf = new SimpleDateFormat("MM-dd");
-		// ÀıÈç£ºcc_time=1291778220
+		// ä¾‹å¦‚ï¼šcc_time=1291778220
 		long lcc_time = Long.valueOf(cc_time);
 		re_StrTime = sdf.format(new Date(lcc_time * 1000L));
 		return re_StrTime;
 	}
 
 	/*
-	 * ½«Ê±¼ä´Á×ªÎª×Ö·û´® £¬¸ñÊ½£ºHH:mm
+	 * å°†æ—¶é—´æˆ³è½¬ä¸ºå­—ç¬¦ä¸² ï¼Œæ ¼å¼ï¼šHH:mm
 	 */
 	public static String getStrTime_hm(String cc_time) {
 		String re_StrTime = null;
 		SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
-		// ÀıÈç£ºcc_time=1291778220
+		// ä¾‹å¦‚ï¼šcc_time=1291778220
 		long lcc_time = Long.valueOf(cc_time);
 		re_StrTime = sdf.format(new Date(lcc_time * 1000L));
 		return re_StrTime;
 	}
 
 	/*
-	 * ½«Ê±¼ä´Á×ªÎª×Ö·û´® £¬¸ñÊ½£ºHH:mm:ss
+	 * å°†æ—¶é—´æˆ³è½¬ä¸ºå­—ç¬¦ä¸² ï¼Œæ ¼å¼ï¼šHH:mm:ss
 	 */
 	public static String getStrTime_hms(String cc_time) {
 		String re_StrTime = null;
 		SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
-		// ÀıÈç£ºcc_time=1291778220
+		// ä¾‹å¦‚ï¼šcc_time=1291778220
 		long lcc_time = Long.valueOf(cc_time);
 		re_StrTime = sdf.format(new Date(lcc_time * 1000L));
 		return re_StrTime;
 	}
 	
 	/*
-	 * ½«Ê±¼ä´Á×ªÎª×Ö·û´® £¬¸ñÊ½£ºMM-dd HH:mm:ss
+	 * å°†æ—¶é—´æˆ³è½¬ä¸ºå­—ç¬¦ä¸² ï¼Œæ ¼å¼ï¼šMM-dd HH:mm:ss
 	 */
 	public static String getNewsDetailsDate(String cc_time) {
 		String re_StrTime = null;
 		SimpleDateFormat sdf = new SimpleDateFormat("MM-dd HH:mm:ss");
-		// ÀıÈç£ºcc_time=1291778220
+		// ä¾‹å¦‚ï¼šcc_time=1291778220
 		long lcc_time = Long.valueOf(cc_time);
 		re_StrTime = sdf.format(new Date(lcc_time * 1000L));
 		return re_StrTime;
 	}
 
 	/* 
-	 * ½«×Ö·û´®×ªÎªÊ±¼ä´Á
+	 * å°†å­—ç¬¦ä¸²è½¬ä¸ºæ—¶é—´æˆ³
 	 */
 	public static String getTime() {
 		String re_time = null;
@@ -128,14 +128,14 @@ public class DateTools {
 	}
 	
 	/*
-	 * ½«Ê±¼ä´Á×ªÎª×Ö·û´® £¬¸ñÊ½£ºyyyy.MM.dd  ĞÇÆÚ¼¸
+	 * å°†æ—¶é—´æˆ³è½¬ä¸ºå­—ç¬¦ä¸² ï¼Œæ ¼å¼ï¼šyyyy.MM.dd  æ˜ŸæœŸå‡ 
 	 */
 	public static String getSection(String cc_time) {
 		String re_StrTime = null;
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd  EEEE");
-//		¶ÔÓÚ´´½¨SimpleDateFormat´«ÈëµÄ²ÎÊı£ºEEEE´ú±íĞÇÆÚ£¬Èç¡°ĞÇÆÚËÄ¡±£»MMMM´ú±íÖĞÎÄÔÂ·İ£¬Èç¡°Ê®Ò»ÔÂ¡±£»MM´ú±íÔÂ·İ£¬Èç¡°11¡±£»
-//		yyyy´ú±íÄê·İ£¬Èç¡°2010¡±£»dd´ú±íÌì£¬Èç¡°25¡±
-		// ÀıÈç£ºcc_time=1291778220
+//		å¯¹äºåˆ›å»ºSimpleDateFormatä¼ å…¥çš„å‚æ•°ï¼šEEEEä»£è¡¨æ˜ŸæœŸï¼Œå¦‚â€œæ˜ŸæœŸå››â€ï¼›MMMMä»£è¡¨ä¸­æ–‡æœˆä»½ï¼Œå¦‚â€œåä¸€æœˆâ€ï¼›MMä»£è¡¨æœˆä»½ï¼Œå¦‚â€œ11â€ï¼›
+//		yyyyä»£è¡¨å¹´ä»½ï¼Œå¦‚â€œ2010â€ï¼›ddä»£è¡¨å¤©ï¼Œå¦‚â€œ25â€
+		// ä¾‹å¦‚ï¼šcc_time=1291778220
 		long lcc_time = Long.valueOf(cc_time);
 		re_StrTime = sdf.format(new Date(lcc_time * 1000L));
 		return re_StrTime;

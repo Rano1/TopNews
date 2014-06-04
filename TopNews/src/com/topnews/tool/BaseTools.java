@@ -5,7 +5,7 @@ import android.util.DisplayMetrics;
 
 public class BaseTools {
 	
-	/** »ñÈ¡ÆÁÄ»µÄ¿í¶È */
+	/** è·å–å±å¹•çš„å®½åº¦ */
 	public final static int getWindowsWidth(Activity activity) {
 		DisplayMetrics dm = new DisplayMetrics();
 		activity.getWindowManager().getDefaultDisplay().getMetrics(dm);

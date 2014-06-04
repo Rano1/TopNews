@@ -17,7 +17,7 @@ public class DBUtil {
 		mSQLiteDatabase = mSQLHelp.getWritableDatabase();
 	}
 	/**
-	 * ³õÊ¼»¯Êı¾İ¿â²Ù×÷DBUtilÀà
+	 * åˆå§‹åŒ–æ•°æ®åº“æ“ä½œDBUtilç±»
 	 */
 	public static DBUtil getInstance(Context context) {
 		if (mInstance == null) {
@@ -26,7 +26,7 @@ public class DBUtil {
 		return mInstance;
 	}
 	/**
-	 * ¹Ø±ÕÊı¾İ¿â
+	 * å…³é—­æ•°æ®åº“
 	 */
 	public void close() {
 		mSQLHelp.close();
@@ -37,14 +37,14 @@ public class DBUtil {
 	}
 
 	/**
-	 * Ìí¼ÓÊı¾İ
+	 * æ·»åŠ æ•°æ®
 	 */
 	public void insertData(ContentValues values) {
 		mSQLiteDatabase.insert(SQLHelper.TABLE_CHANNEL, null, values);
 	}
 
 	/**
-	 * ¸üĞÂÊı¾İ
+	 * æ›´æ–°æ•°æ®
 	 * 
 	 * @param values
 	 * @param whereClause
@@ -57,7 +57,7 @@ public class DBUtil {
 	}
 
 	/**
-	 * É¾³ıÊı¾İ
+	 * åˆ é™¤æ•°æ®
 	 * 
 	 * @param whereClause
 	 * @param whereArgs
@@ -68,7 +68,7 @@ public class DBUtil {
 	}
 
 	/**
-	 * ²éÑ¯Êı¾İ
+	 * æŸ¥è¯¢æ•°æ®
 	 * 
 	 * @param columns
 	 * @param selection

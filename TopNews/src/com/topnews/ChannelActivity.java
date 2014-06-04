@@ -32,23 +32,23 @@ import android.widget.LinearLayout;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.TextView;
 /**
- * ÆµµÀ¹ÜÀí
+ * é¢‘é“ç®¡ç†
  */
 public class ChannelActivity extends BaseActivity implements OnItemClickListener {
 	public static String TAG = "ChannelActivity";
-	/** ÓÃ»§À¸Ä¿µÄGRIDVIEW */
+	/** ç”¨æˆ·æ ç›®çš„GRIDVIEW */
 	private DragGrid userGridView;
-	/** ÆäËüÀ¸Ä¿µÄGRIDVIEW */
+	/** å…¶å®ƒæ ç›®çš„GRIDVIEW */
 	private OtherGridView otherGridView;
-	/** ÓÃ»§À¸Ä¿¶ÔÓ¦µÄÊÊÅäÆ÷£¬¿ÉÒÔÍÏ¶¯ */
+	/** ç”¨æˆ·æ ç›®å¯¹åº”çš„é€‚é…å™¨ï¼Œå¯ä»¥æ‹–åŠ¨ */
 	DragAdapter userAdapter;
-	/** ÆäËüÀ¸Ä¿¶ÔÓ¦µÄÊÊÅäÆ÷ */
+	/** å…¶å®ƒæ ç›®å¯¹åº”çš„é€‚é…å™¨ */
 	OtherAdapter otherAdapter;
-	/** ÆäËüÀ¸Ä¿ÁĞ±í */
+	/** å…¶å®ƒæ ç›®åˆ—è¡¨ */
 	ArrayList<ChannelItem> otherChannelList = new ArrayList<ChannelItem>();
-	/** ÓÃ»§À¸Ä¿ÁĞ±í */
+	/** ç”¨æˆ·æ ç›®åˆ—è¡¨ */
 	ArrayList<ChannelItem> userChannelList = new ArrayList<ChannelItem>();
-	/** ÊÇ·ñÔÚÒÆ¶¯£¬ÓÉÓÚÕâ±ßÊÇ¶¯»­½áÊøºó²Å½øĞĞµÄÊı¾İ¸üÌæ£¬ÉèÖÃÕâ¸öÏŞÖÆÎªÁË±ÜÃâ²Ù×÷Ì«Æµ·±Ôì³ÉµÄÊı¾İ´íÂÒ¡£ */	
+	/** æ˜¯å¦åœ¨ç§»åŠ¨ï¼Œç”±äºè¿™è¾¹æ˜¯åŠ¨ç”»ç»“æŸåæ‰è¿›è¡Œçš„æ•°æ®æ›´æ›¿ï¼Œè®¾ç½®è¿™ä¸ªé™åˆ¶ä¸ºäº†é¿å…æ“ä½œå¤ªé¢‘ç¹é€ æˆçš„æ•°æ®é”™ä¹±ã€‚ */	
 	boolean isMove = false;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +58,7 @@ public class ChannelActivity extends BaseActivity implements OnItemClickListener
 		initData();
 	}
 	
-	/** ³õÊ¼»¯Êı¾İ*/
+	/** åˆå§‹åŒ–æ•°æ®*/
 	private void initData() {
 	    userChannelList = ((ArrayList<ChannelItem>)ChannelManage.getManage(AppApplication.getApp().getSQLHelper()).getUserChannel());
 	    otherChannelList = ((ArrayList<ChannelItem>)ChannelManage.getManage(AppApplication.getApp().getSQLHelper()).getOtherChannel());
@@ -66,12 +66,12 @@ public class ChannelActivity extends BaseActivity implements OnItemClickListener
 	    userGridView.setAdapter(userAdapter);
 	    otherAdapter = new OtherAdapter(this, otherChannelList);
 	    otherGridView.setAdapter(otherAdapter);
-	    //ÉèÖÃGRIDVIEWµÄITEMµÄµã»÷¼àÌı
+	    //è®¾ç½®GRIDVIEWçš„ITEMçš„ç‚¹å‡»ç›‘å¬
 	    otherGridView.setOnItemClickListener(this);
 	    userGridView.setOnItemClickListener(this);
 	}
 	
-	/** ³õÊ¼»¯²¼¾Ö*/
+	/** åˆå§‹åŒ–å¸ƒå±€*/
 	private void initView() {
 		userGridView = (DragGrid) findViewById(R.id.userGridView);
 		otherGridView = (OtherGridView) findViewById(R.id.otherGridView);
@@ -84,31 +84,31 @@ public class ChannelActivity extends BaseActivity implements OnItemClickListener
 		return true;
 	}
 	
-	/** GRIDVIEW¶ÔÓ¦µÄITEMµã»÷¼àÌı½Ó¿Ú  */
+	/** GRIDVIEWå¯¹åº”çš„ITEMç‚¹å‡»ç›‘å¬æ¥å£  */
 	@Override
 	public void onItemClick(AdapterView<?> parent, final View view, final int position,long id) {
-		//Èç¹ûµã»÷µÄÊ±ºò£¬Ö®Ç°¶¯»­»¹Ã»½áÊø£¬ÄÇÃ´¾ÍÈÃµã»÷ÊÂ¼şÎŞĞ§
+		//å¦‚æœç‚¹å‡»çš„æ—¶å€™ï¼Œä¹‹å‰åŠ¨ç”»è¿˜æ²¡ç»“æŸï¼Œé‚£ä¹ˆå°±è®©ç‚¹å‡»äº‹ä»¶æ— æ•ˆ
 		if(isMove){
 			return;
 		}
 		switch (parent.getId()) {
 		case R.id.userGridView:
-			//positionÎª 0£¬1 µÄ²»¿ÉÒÔ½øĞĞÈÎºÎ²Ù×÷
+			//positionä¸º 0ï¼Œ1 çš„ä¸å¯ä»¥è¿›è¡Œä»»ä½•æ“ä½œ
 			if (position != 0 && position != 1) {
 				final ImageView moveImageView = getView(view);
 				if (moveImageView != null) {
 					TextView newTextView = (TextView) view.findViewById(R.id.text_item);
 					final int[] startLocation = new int[2];
 					newTextView.getLocationInWindow(startLocation);
-					final ChannelItem channel = ((DragAdapter) parent.getAdapter()).getItem(position);//»ñÈ¡µã»÷µÄÆµµÀÄÚÈİ
+					final ChannelItem channel = ((DragAdapter) parent.getAdapter()).getItem(position);//è·å–ç‚¹å‡»çš„é¢‘é“å†…å®¹
 					otherAdapter.setVisible(false);
-					//Ìí¼Óµ½×îºóÒ»¸ö
+					//æ·»åŠ åˆ°æœ€åä¸€ä¸ª
 					otherAdapter.addItem(channel);
 					new Handler().postDelayed(new Runnable() {
 						public void run() {
 							try {
 								int[] endLocation = new int[2];
-								//»ñÈ¡ÖÕµãµÄ×ø±ê
+								//è·å–ç»ˆç‚¹çš„åæ ‡
 								otherGridView.getChildAt(otherGridView.getLastVisiblePosition()).getLocationInWindow(endLocation);
 								MoveAnim(moveImageView, startLocation , endLocation, channel,userGridView);
 								userAdapter.setRemove(position);
@@ -127,13 +127,13 @@ public class ChannelActivity extends BaseActivity implements OnItemClickListener
 				newTextView.getLocationInWindow(startLocation);
 				final ChannelItem channel = ((OtherAdapter) parent.getAdapter()).getItem(position);
 				userAdapter.setVisible(false);
-				//Ìí¼Óµ½×îºóÒ»¸ö
+				//æ·»åŠ åˆ°æœ€åä¸€ä¸ª
 				userAdapter.addItem(channel);
 				new Handler().postDelayed(new Runnable() {
 					public void run() {
 						try {
 							int[] endLocation = new int[2];
-							//»ñÈ¡ÖÕµãµÄ×ø±ê
+							//è·å–ç»ˆç‚¹çš„åæ ‡
 							userGridView.getChildAt(userGridView.getLastVisiblePosition()).getLocationInWindow(endLocation);
 							MoveAnim(moveImageView, startLocation , endLocation, channel,otherGridView);
 							otherAdapter.setRemove(position);
@@ -148,7 +148,7 @@ public class ChannelActivity extends BaseActivity implements OnItemClickListener
 		}
 	}
 	/**
-	 * µã»÷ITEMÒÆ¶¯¶¯»­
+	 * ç‚¹å‡»ITEMç§»åŠ¨åŠ¨ç”»
 	 * @param moveView
 	 * @param startLocation
 	 * @param endLocation
@@ -158,19 +158,19 @@ public class ChannelActivity extends BaseActivity implements OnItemClickListener
 	private void MoveAnim(View moveView, int[] startLocation,int[] endLocation, final ChannelItem moveChannel,
 			final GridView clickGridView) {
 		int[] initLocation = new int[2];
-		//»ñÈ¡´«µİ¹ıÀ´µÄVIEWµÄ×ø±ê
+		//è·å–ä¼ é€’è¿‡æ¥çš„VIEWçš„åæ ‡
 		moveView.getLocationInWindow(initLocation);
-		//µÃµ½ÒªÒÆ¶¯µÄVIEW,²¢·ÅÈë¶ÔÓ¦µÄÈİÆ÷ÖĞ
+		//å¾—åˆ°è¦ç§»åŠ¨çš„VIEW,å¹¶æ”¾å…¥å¯¹åº”çš„å®¹å™¨ä¸­
 		final ViewGroup moveViewGroup = getMoveViewGroup();
 		final View mMoveView = getMoveView(moveViewGroup, moveView, initLocation);
-		//´´½¨ÒÆ¶¯¶¯»­
+		//åˆ›å»ºç§»åŠ¨åŠ¨ç”»
 		TranslateAnimation moveAnimation = new TranslateAnimation(
 				startLocation[0], endLocation[0], startLocation[1],
 				endLocation[1]);
-		moveAnimation.setDuration(300L);//¶¯»­Ê±¼ä
-		//¶¯»­ÅäÖÃ
+		moveAnimation.setDuration(300L);//åŠ¨ç”»æ—¶é—´
+		//åŠ¨ç”»é…ç½®
 		AnimationSet moveAnimationSet = new AnimationSet(true);
-		moveAnimationSet.setFillAfter(false);//¶¯»­Ğ§¹ûÖ´ĞĞÍê±Ïºó£¬View¶ÔÏó²»±£ÁôÔÚÖÕÖ¹µÄÎ»ÖÃ
+		moveAnimationSet.setFillAfter(false);//åŠ¨ç”»æ•ˆæœæ‰§è¡Œå®Œæ¯•åï¼ŒViewå¯¹è±¡ä¸ä¿ç•™åœ¨ç»ˆæ­¢çš„ä½ç½®
 		moveAnimationSet.addAnimation(moveAnimation);
 		mMoveView.startAnimation(moveAnimationSet);
 		moveAnimationSet.setAnimationListener(new AnimationListener() {
@@ -187,7 +187,7 @@ public class ChannelActivity extends BaseActivity implements OnItemClickListener
 			@Override
 			public void onAnimationEnd(Animation animation) {
 				moveViewGroup.removeView(mMoveView);
-				// instanceof ·½·¨ÅĞ¶Ï2±ßÊµÀıÊÇ²»ÊÇÒ»Ñù£¬ÅĞ¶Ïµã»÷µÄÊÇDragGrid»¹ÊÇOtherGridView
+				// instanceof æ–¹æ³•åˆ¤æ–­2è¾¹å®ä¾‹æ˜¯ä¸æ˜¯ä¸€æ ·ï¼Œåˆ¤æ–­ç‚¹å‡»çš„æ˜¯DragGridè¿˜æ˜¯OtherGridView
 				if (clickGridView instanceof DragGrid) {
 					otherAdapter.setVisible(true);
 					otherAdapter.notifyDataSetChanged();
@@ -203,7 +203,7 @@ public class ChannelActivity extends BaseActivity implements OnItemClickListener
 	}
 	
 	/**
-	 * »ñÈ¡ÒÆ¶¯µÄVIEW£¬·ÅÈë¶ÔÓ¦ViewGroup²¼¾ÖÈİÆ÷
+	 * è·å–ç§»åŠ¨çš„VIEWï¼Œæ”¾å…¥å¯¹åº”ViewGroupå¸ƒå±€å®¹å™¨
 	 * @param viewGroup
 	 * @param view
 	 * @param initLocation
@@ -221,7 +221,7 @@ public class ChannelActivity extends BaseActivity implements OnItemClickListener
 	}
 	
 	/**
-	 * ´´½¨ÒÆ¶¯µÄITEM¶ÔÓ¦µÄViewGroup²¼¾ÖÈİÆ÷
+	 * åˆ›å»ºç§»åŠ¨çš„ITEMå¯¹åº”çš„ViewGroupå¸ƒå±€å®¹å™¨
 	 */
 	private ViewGroup getMoveViewGroup() {
 		ViewGroup moveViewGroup = (ViewGroup) getWindow().getDecorView();
@@ -232,7 +232,7 @@ public class ChannelActivity extends BaseActivity implements OnItemClickListener
 	}
 	
 	/**
-	 * »ñÈ¡µã»÷µÄItemµÄ¶ÔÓ¦View£¬
+	 * è·å–ç‚¹å‡»çš„Itemçš„å¯¹åº”Viewï¼Œ
 	 * @param view
 	 * @return
 	 */
@@ -246,7 +246,7 @@ public class ChannelActivity extends BaseActivity implements OnItemClickListener
 		return iv;
 	}
 	
-	/** ÍË³öÊ±ºò±£´æÑ¡ÔñºóÊı¾İ¿âµÄÉèÖÃ  */
+	/** é€€å‡ºæ—¶å€™ä¿å­˜é€‰æ‹©åæ•°æ®åº“çš„è®¾ç½®  */
 	private void saveChannel() {
 		ChannelManage.getManage(AppApplication.getApp().getSQLHelper()).deleteAllChannel();
 		ChannelManage.getManage(AppApplication.getApp().getSQLHelper()).saveUserChannel(userAdapter.getChannnelLst());
@@ -260,7 +260,7 @@ public class ChannelActivity extends BaseActivity implements OnItemClickListener
 			Intent intent = new Intent(getApplicationContext(), MainActivity.class);
 			setResult(MainActivity.CHANNELRESULT, intent);
 			finish();
-			Log.d(TAG, "Êı¾İ·¢Éú¸Ä±ä");
+			Log.d(TAG, "æ•°æ®å‘ç”Ÿæ”¹å˜");
 		}else{
 			super.onBackPressed();
 		}

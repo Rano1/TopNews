@@ -36,7 +36,7 @@ public class CityAdapter extends BaseAdapter implements SectionIndexer,
 		initDateHead();
 	}
 
-	/* »ñÈ¡Í·²¿head±êÇ©Êı¾İ */
+	/* è·å–å¤´éƒ¨headæ ‡ç­¾æ•°æ® */
 	private void initDateHead() {
 		mSections = new ArrayList<String>();
 		mPositions = new ArrayList<Integer>();
@@ -93,7 +93,7 @@ public class CityAdapter extends BaseAdapter implements SectionIndexer,
 		}
 		CityEntity city = getItem(position);
 		mHolder.city_name.setText(city.getName());
-		//Í·²¿µÄÏà¹Ø¶«Î÷
+		//å¤´éƒ¨çš„ç›¸å…³ä¸œè¥¿
 		int section = getSectionForPosition(position);
 		if (getPositionForSection(section) == position) {
 			mHolder.layout_city_section.setVisibility(View.VISIBLE);

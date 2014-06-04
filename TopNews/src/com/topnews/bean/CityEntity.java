@@ -3,18 +3,18 @@ package com.topnews.bean;
 import java.io.Serializable;
 
 /*
- * ³ÇÊĞÊµÌåÀà
+ * åŸå¸‚å®ä½“ç±»
  */
 public class CityEntity implements Serializable{
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 2005295701925847160L;
-	/* ³ÇÊĞID */
+	/* åŸå¸‚ID */
 	public Integer id;
-	/* ³ÇÊĞNAME */
+	/* åŸå¸‚NAME */
 	public String name;
-	/* ³ÇÊĞÆ´ÒôÊ××ÖÄ¸ */
+	/* åŸå¸‚æ‹¼éŸ³é¦–å­—æ¯ */
 	public char pinyin;
 
 	public CityEntity(Integer id, String name, char pinyin) {

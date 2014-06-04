@@ -48,12 +48,12 @@ public class DetailsActivity extends BaseActivity {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.details);
-		setNeedBackGesture(true);//ÉèÖÃĞèÒªÊÖÊÆ¼àÌı
+		setNeedBackGesture(true);//è®¾ç½®éœ€è¦æ‰‹åŠ¿ç›‘å¬
 		getData();
 		initView();
 		initWebView();
 	}
-	/* »ñÈ¡´«µİ¹ıÀ´µÄÊı¾İ */
+	/* è·å–ä¼ é€’è¿‡æ¥çš„æ•°æ® */
 	private void getData() {
 		news = (NewsEntity) getIntent().getSerializableExtra("news");
 		news_url = news.getSource_url();
@@ -67,15 +67,15 @@ public class DetailsActivity extends BaseActivity {
 		LayoutParams params = new LayoutParams(LayoutParams.MATCH_PARENT,LayoutParams.MATCH_PARENT);
 		if (!TextUtils.isEmpty(news_url)) {
 			WebSettings settings = webView.getSettings();
-			settings.setJavaScriptEnabled(true);//ÉèÖÃ¿ÉÒÔÔËĞĞJS½Å±¾
+			settings.setJavaScriptEnabled(true);//è®¾ç½®å¯ä»¥è¿è¡ŒJSè„šæœ¬
 //			settings.setTextZoom(120);//Sets the text zoom of the page in percent. The default is 100.
 			settings.setLayoutAlgorithm(LayoutAlgorithm.SINGLE_COLUMN);
-//			settings.setUseWideViewPort(true); //´ò¿ªÒ³ÃæÊ±£¬ ×ÔÊÊÓ¦ÆÁÄ» 
-//			settings.setLoadWithOverviewMode(true);//´ò¿ªÒ³ÃæÊ±£¬ ×ÔÊÊÓ¦ÆÁÄ» 
-			settings.setSupportZoom(false);// ÓÃÓÚÉèÖÃwebview·Å´ó
+//			settings.setUseWideViewPort(true); //æ‰“å¼€é¡µé¢æ—¶ï¼Œ è‡ªé€‚åº”å±å¹• 
+//			settings.setLoadWithOverviewMode(true);//æ‰“å¼€é¡µé¢æ—¶ï¼Œ è‡ªé€‚åº”å±å¹• 
+			settings.setSupportZoom(false);// ç”¨äºè®¾ç½®webviewæ”¾å¤§
 			settings.setBuiltInZoomControls(false);
 			webView.setBackgroundResource(R.color.transparent);
-			// Ìí¼Ójs½»»¥½Ó¿ÚÀà£¬²¢Æğ±ğÃû imagelistner
+			// æ·»åŠ jsäº¤äº’æ¥å£ç±»ï¼Œå¹¶èµ·åˆ«å imagelistner
 			webView.addJavascriptInterface(new JavascriptInterface(getApplicationContext()),"imagelistner");
 			webView.setWebChromeClient(new MyWebChromeClient());
 			webView.setWebViewClient(new MyWebViewClient());
@@ -87,7 +87,7 @@ public class DetailsActivity extends BaseActivity {
 		title = (TextView) findViewById(R.id.title);
 		progressBar = (ProgressBar) findViewById(R.id.ss_htmlprogessbar);
 		customview_layout = (FrameLayout) findViewById(R.id.customview_layout);
-		//µ×²¿À¸Ä¿
+		//åº•éƒ¨æ ç›®
 		action_comment_count = (TextView) findViewById(R.id.action_comment_count);
 		
 		progressBar.setVisibility(View.VISIBLE);
@@ -117,9 +117,9 @@ public class DetailsActivity extends BaseActivity {
 		}
 	}
 
-	// ×¢Èëjsº¯Êı¼àÌı
+	// æ³¨å…¥jså‡½æ•°ç›‘å¬
 	private void addImageClickListner() {
-		// Õâ¶Îjsº¯ÊıµÄ¹¦ÄÜ¾ÍÊÇ£¬±éÀúËùÓĞµÄimg¼¸µã£¬²¢Ìí¼Óonclickº¯Êı£¬ÔÚ»¹ÊÇÖ´ĞĞµÄÊ±ºòµ÷ÓÃ±¾µØ½Ó¿Ú´«µİurl¹ıÈ¥
+		// è¿™æ®µjså‡½æ•°çš„åŠŸèƒ½å°±æ˜¯ï¼Œéå†æ‰€æœ‰çš„imgå‡ ç‚¹ï¼Œå¹¶æ·»åŠ onclickå‡½æ•°ï¼Œåœ¨è¿˜æ˜¯æ‰§è¡Œçš„æ—¶å€™è°ƒç”¨æœ¬åœ°æ¥å£ä¼ é€’urlè¿‡å»
 		webView.loadUrl("javascript:(function(){"
 				+ "var objs = document.getElementsByTagName(\"img\");"
 				+ "var imgurl=''; " + "for(var i=0;i<objs.length;i++)  " + "{"
@@ -129,7 +129,7 @@ public class DetailsActivity extends BaseActivity {
 				+ "    }  " + "}" + "})()");
 	}
 
-	// jsÍ¨ĞÅ½Ó¿Ú
+	// jsé€šä¿¡æ¥å£
 	public class JavascriptInterface {
 
 		private Context context;
@@ -145,7 +145,7 @@ public class DetailsActivity extends BaseActivity {
 			ArrayList<String> imgsUrl = new ArrayList<String>();
 			for (String s : imgs) {
 				imgsUrl.add(s);
-				Log.i("Í¼Æ¬µÄURL>>>>>>>>>>>>>>>>>>>>>>>", s);
+				Log.i("å›¾ç‰‡çš„URL>>>>>>>>>>>>>>>>>>>>>>>", s);
 			}
 			Intent intent = new Intent();
 			intent.putStringArrayListExtra("infos", imgsUrl);
@@ -155,7 +155,7 @@ public class DetailsActivity extends BaseActivity {
 		}
 	}
 
-	// ¼àÌı
+	// ç›‘å¬
 	private class MyWebViewClient extends WebViewClient {
 		@Override
 		public boolean shouldOverrideUrlLoading(WebView view, String url) {
@@ -166,7 +166,7 @@ public class DetailsActivity extends BaseActivity {
 		public void onPageFinished(WebView view, String url) {
 			view.getSettings().setJavaScriptEnabled(true);
 			super.onPageFinished(view, url);
-			// html¼ÓÔØÍê³ÉÖ®ºó£¬Ìí¼Ó¼àÌıÍ¼Æ¬µÄµã»÷jsº¯Êı
+			// htmlåŠ è½½å®Œæˆä¹‹åï¼Œæ·»åŠ ç›‘å¬å›¾ç‰‡çš„ç‚¹å‡»jså‡½æ•°
 			addImageClickListner();
 			progressBar.setVisibility(View.GONE);
 			webView.setVisibility(View.VISIBLE);

@@ -6,7 +6,7 @@ import android.app.Activity;
 import android.view.GestureDetector.OnGestureListener;
 import android.view.MotionEvent;
 /**
- * 返回手势监听接口
+ * 杩斿洖鎵嬪娍鐩戝惉鎺ュ彛
  */
 public class BackGestureListener implements OnGestureListener {
 	BaseActivity activity;

@@ -10,9 +10,9 @@ import android.view.View;
 
 public class BaseActivity extends Activity {
 
-	/** ÊÖÊÆ¼àÌı */
+	/** æ‰‹åŠ¿ç›‘å¬ */
 	GestureDetector mGestureDetector;
-	/** ÊÇ·ñĞèÒª¼àÌıÊÖÊÆ¹Ø±Õ¹¦ÄÜ */
+	/** æ˜¯å¦éœ€è¦ç›‘å¬æ‰‹åŠ¿å…³é—­åŠŸèƒ½ */
 	private boolean mNeedBackGesture = false;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -38,14 +38,14 @@ public class BaseActivity extends Activity {
 	}
 	
 	/*
-	 * ÉèÖÃÊÇ·ñ½øĞĞÊÖÊÆ¼àÌı
+	 * è®¾ç½®æ˜¯å¦è¿›è¡Œæ‰‹åŠ¿ç›‘å¬
 	 */
 	public void setNeedBackGesture(boolean mNeedBackGesture){
 		this.mNeedBackGesture = mNeedBackGesture;
 	}
 	
 	/*
-	 * ·µ»Ø
+	 * è¿”å›
 	 */
 	public void doBack(View view) {
 		onBackPressed();
